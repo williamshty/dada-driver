@@ -1,0 +1,45 @@
+
+.normal {
+  font-family: Georgia, sans-serif;
+  background-color:rgba(0,0,0,0);
+  height: 100%;
+}
+
+
+.title {
+  font-size: 2.5rem;
+  font-weight: normal;
+  letter-spacing: -1px;
+}
+
+.welcome {
+  height: 328px;
+  background: url(../assets/yay.jpg) no-repeat center 0;
+  background-size: 388px 328px;
+}
+
+.list {
+  font-size: 1.2em;
+  margin-top: 1.8em;
+  list-style: none;
+  line-height: 1.5em;
+}
+
+.list code {
+  background: #f7f7f7;
+}
+
+.map__container {
+  height: 100%;
+  width: 100%;
+  top:0;
+  left:0;
+  z-index: auto;
+  position: absolute;
+}
+
+.page__head {
+  z-index:100;
+  /* position: relative; */
+  /* height: 100%; */
+}

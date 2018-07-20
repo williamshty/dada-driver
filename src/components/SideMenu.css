@@ -1,0 +1,43 @@
+.button{
+    position: relative;
+    margin-left: 11px;
+    margin-top:19px;
+    z-index: 1000;
+}
+
+.button__animated{
+    position: relative;
+    margin-left: 11px;
+    margin-top:19px;
+    z-index: 1000;
+    animation: mymove .6s;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease-out;
+}
+
+.button__animated_reverse{
+    position: relative;
+    margin-left: 11px;
+    margin-top:19px;
+    z-index: 1000;
+    animation: mymove_reverse .6s;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease-out;
+
+}
+
+@keyframes mymove
+{
+from {top:0px;}
+to {top:90px;}
+}
+@keyframes mymove_reverse
+{
+from {top:90px;}
+to {top:0px;}
+}
+
+
+.sidebar {
+
+}
