@@ -1,0 +1,122 @@
+.button{
+    /* position: relative; */
+    position:absolute;
+    margin-left: 11px;
+    margin-top:19px;
+    z-index: 1000;
+}
+.button__bottom{
+    position:absolute;
+    margin-left: 155px;
+    margin-top:589px;
+    z-index: 1;
+    background: url('../../assets/X311Y1178.png') no-repeat top;
+    background-size: 100%;
+}
+.button__bottom:active{
+    position:absolute;
+    margin-left: 155px;
+    margin-top:589px;
+    z-index: 1;
+    background: url('../../assets/X311Y1178 X.png') no-repeat top;
+    background-size: 100%;
+}
+
+.button__bottom__filler{
+    width: 74px;
+    height: 74px;
+}
+
+.button__traffic__deactive{
+    position:absolute;
+    margin-left: 333px;
+    margin-top:98px;
+    z-index: 1;
+    background: url('../../assets/X667Y196路况2.png') no-repeat top;
+    background-size: 100%;
+}
+
+.button__traffic__deactive:active{
+    position:absolute;
+    margin-left: 333px;
+    margin-top:98px;
+    z-index: 1;
+    background: url('../../assets/X667Y196路况2 X.png') no-repeat top;
+    background-size: 100%;
+}
+
+.button__traffic__active{
+    position:absolute;
+    margin-left: 333px;
+    margin-top:98px;
+    z-index: 1;
+    background: url('../../assets/X667Y196路况.png') no-repeat top;
+    background-size: 100%;
+}
+
+.button__traffic__active:active{
+    position:absolute;
+    margin-left: 333px;
+    margin-top:98px;
+    z-index: 1;
+    background: url('../../assets/X667Y196路况 X.png') no-repeat top;
+    background-size: 100%;
+}
+.button__focus{
+    position:absolute;
+    margin-left: 333px;
+    margin-top:134px;
+    z-index: 1;
+    background: url('../../assets/X667Y268回到原点.png') no-repeat top;
+    background-size: 100%;
+}
+.button__focus:active{
+    position:absolute;
+    margin-left: 333px;
+    margin-top:134px;
+    z-index: 1;
+    background: url('../../assets/X667Y268回到原点 X.png') no-repeat top;
+    background-size: 100%;
+}
+
+.button__side__filler{
+    width: 35px;
+    height: 35px;
+}
+
+.button__animated{
+    position:absolute;
+    margin-left: 11px;
+    margin-top:19px;
+    z-index: 1000;
+    animation: mymove .6s;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease-out;
+}
+
+.button__animated_reverse{
+    position:absolute;
+    margin-left: 11px;
+    margin-top:19px;
+    z-index: 1000;
+    animation: mymove_reverse .6s;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease-out;
+
+}
+
+@keyframes mymove
+{
+from {top:0px;}
+to {top:90px;}
+}
+@keyframes mymove_reverse
+{
+from {top:90px;}
+to {top:0px;}
+}
+
+
+.sidebar {
+
+}
