@@ -8,7 +8,8 @@ var currentLocation = {lng: 104.06756279999999, lat: 30.551020799999996}
 const app = dva({
     initialState:{
         navigator:{
-            sideMenuStatus: false
+            sideMenuStatus: false,
+            orderGenerationTriggered:false
         },
         mapData:{
             currentLocation:currentLocation

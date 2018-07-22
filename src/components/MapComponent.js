@@ -2,54 +2,51 @@ import React from 'react';
 import { connect } from 'dva';
 // import { Map } from 'react-amap';
 import loadPosition from '../utils/locater'
+import {searchLocation} from '../utils/baiduQuery'
 import {Map, DrivingRoute,Marker, NavigationControl, InfoWindow, TrafficLayer} from 'react-bmap'
 class MapComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentLocation:this.props.currentLocation
+      currentLocation:this.props.mapData.currentLocation
     }
   }
-  componentDidMount() {
-    loadPosition(this.props.dispatch)
-    // if ("geolocation" in navigator) {
-    //   this.loadPosition();
-    // }
+  async loadSearchedLocation (param) {
+    loadPosition(this.props.mapData.dispatch)
+    const result = await searchLocation(param)
+    console.log(result)
   }
-  // loadPosition = async () => {
-  //   try {
-  //     const position = await this.getCurrentPosition();
-  //     const { latitude, longitude } = position.coords;
-  //     this.setState({
-  //       currentLocation:{
-  //         lng:longitude,
-  //         lat: latitude,
-  //       }
-  //     });
-  //     console.log('position loaded')
-  //     this.props.dispatch({
-  //       type:'mapData/updateCurrentLocation',
-  //       payload:{
-  //         currentLocation:this.state.currentLocation
-  //       }
-  //     })
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  // getCurrentPosition = (options = {}) => {
-  //   return new Promise((resolve, reject) => {
-  //     navigator.geolocation.getCurrentPosition(resolve, reject, options);
-  //   });
-  // };
+
+  componentDidMount() {
+    this.loadSearchedLocation.bind(this)('牛市口')
+    loadPosition(this.props.mapData.dispatch)
+    console.log(this.props.mapData)
+    // this.props.mapData.dispatch({type:'navigator/toggleOrderGeneration'})
+  }
   render(){
     return (
       <Map style={{height: '100%'}} center={this.state.currentLocation} zoom="12">
        {(()=>{
-         if(this.props.trafficActivated) return(<TrafficLayer/>)    
+         if(this.props.mapData.trafficActivated) return(<TrafficLayer/>)    
        })()}
        <Marker position={this.state.currentLocation}/>
-       {/* <DrivingRoute start={this.state.currentLocation} end='牛市口'/>  */}
+       {(()=>{
+        if(this.props.navigator.orderGenerationTriggered && this.props.mapData.startLocation) return(
+          <Marker position={this.props.mapData.startLocation}/>
+        )
+        })()}
+        {(()=>{
+        if(this.props.navigator.orderGenerationTriggered && this.props.mapData.endLocation) return(
+          <Marker position={this.props.mapData.endLocation}/>
+        )
+        })()}
+        {(()=>{
+        if(this.props.navigator.orderGenerationTriggered&&this.props.mapData.endLocation && this.props.mapData.startLocation) return(
+          <DrivingRoute 
+          start={this.props.mapData.startLocation} 
+          end={this.props.mapData.endLocation}/>  
+        )
+        })()}
       </Map>
       );
   }
@@ -59,7 +56,7 @@ MapComponent.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return state.mapData
+  return state
 }
 
 export default connect(mapStateToProps)(MapComponent);

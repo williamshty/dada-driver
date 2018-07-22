@@ -1,14 +1,27 @@
 import React from 'react';
+import { connect } from 'dva';
 
-const Example = () => {
-  return (
-    <div>
-      Example
-    </div>
-  );
+class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
+  
+  render(){
+    return (
+        <div></div>
+    );
+  }
+
 };
 
 Example.propTypes = {
+  
 };
 
-export default Example;
+function mapStateToProps(state) {
+  return this.state
+}
+
+export default connect(mapStateToProps)(Example);

@@ -10,7 +10,8 @@ export default async function loadPosition (dispatch) {
       dispatch({
         type:'mapData/updateCurrentLocation',
         payload:{
-          currentLocation:currentLocation
+          currentLocation:currentLocation,
+          startLocation:currentLocation
         }
       })
     } catch (error) {

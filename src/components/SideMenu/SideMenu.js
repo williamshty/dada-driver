@@ -3,9 +3,19 @@ import { connect } from 'dva';
 import { Drawer } from 'antd-mobile';
 import styles from './SideMenu.css'
 import loadPosition from '../../utils/locater'
-const sidebar = (<div className={styles.sidebar}>
-  <img alt="background" src={require('../../assets/side-bg.png')} width={275}></img>
-</div>)
+const sidebar = (
+<div className={styles.sidebar__background}>
+  <div className={styles.sidebar__background__filler}>
+  <div className={styles.sidebar__mask}>
+    <div className={styles.sidebar__background__filler}>
+      <div className={styles.sidebar__menu}>
+        <div className={styles.sidebar__menu__filler}></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+)
 
 class SideMenu extends React.Component {
   constructor(props) {
@@ -23,7 +33,7 @@ class SideMenu extends React.Component {
           <div className={this.state.buttonStyle}>
           <img alt="avatar" width={38} onClick={()=>this.onOpenChange()} src={require('../../assets/avatar.png')}></img>
           </div>
-          <div className={styles.button__bottom}>
+          <div className={styles.button__bottom} onClick={()=>this.props.dispatch({type:'navigator/toggleOrderGeneration'})}>
             <div className={styles.button__bottom__filler}></div>
           </div>
           {(()=>{
@@ -47,7 +57,7 @@ class SideMenu extends React.Component {
           </div>
         <Drawer
           className="my-drawer"
-          style={{ minHeight: document.documentElement.clientHeight }}
+          style={{ minHeight: document.documentElement.clientHeight, fontSize:10 }}
           enableDragHandle
           contentStyle={{ color: '#A6A6A6', textAlign: 'center'}}
           sidebar={sidebar}

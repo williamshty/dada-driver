@@ -112,11 +112,32 @@ to {top:90px;}
 }
 @keyframes mymove_reverse
 {
-from {top:90px;}
+from {top:9rem;}
 to {top:0px;}
 }
 
 
-.sidebar {
+.sidebar__background {
+ background: url('../../assets/sidebar-layer1.png') no-repeat top;
+ background-size: 275px 667px;
+}
+.sidebar__mask {
+ background-size: 275px 667px;
+ background: url('../../assets/sidebar-mask.png') no-repeat top;
+}
+.sidebar__background__filler {
+ width: 275px;
+ height: 667px;
+}
 
+.sidebar__menu {
+    margin-top: 155px;
+    position: absolute;
+    background-size: 275px 512px;
+    background: url('../../assets/sidebar-layer2.png') no-repeat top;
+}
+.sidebar__menu__filler {
+    width: 275px;
+    height: 512px;
+    font-size: 1em;
 }

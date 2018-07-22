@@ -1,11 +1,12 @@
 
 export default {
 
-    namespace: 'navigator',
+    namespace: 'trip',
   
     state: {
-        sideMenuOpen:false,
-        orderGenerationTriggered:false
+        start:'',
+        end: '',
+        length:''
     },
   
     subscriptions: {
@@ -23,12 +24,6 @@ export default {
       save(state, action) {
         return { ...state, ...action.payload };
       },
-      // toggleSideMenu(state){
-      //     return{sideMenuOpen:!state.sideMenuOpen};
-      // }
-      toggleOrderGeneration(state){
-        return { ...state, orderGenerationTriggered: !state.orderGenerationTriggered};
-      }
     },
   
   };
