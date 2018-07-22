@@ -1,24 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'dva';
-import {SearchBar, List, InputItem} from 'antd-mobile';
+import {SearchBar, List} from 'antd-mobile';
 import styles from './OrderGeneration.css';
 import {searchLocationByCoordinate,searchLocation} from '../../utils/baiduQuery'
 // import pile from 'pile-ui'
 const Item = List.Item;
 const Brief = Item.Brief;
-const isIPhone = new RegExp('\\biPhone\\b|\\biPod\\b', 'i').test(window.navigator.userAgent);
-let moneyKeyboardWrapProps;
-if (isIPhone) {
-  moneyKeyboardWrapProps = {
-    onTouchStart: e => e.preventDefault(),
-  };
-}
 class OrderGeneration extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        type: 'money',
         currentLocation:this.props.mapData.currentLocation,
         start:'',
         end:'',
@@ -59,8 +51,6 @@ class OrderGeneration extends React.Component {
   }
   
   render(){
-    const { getFieldProps } = this.props.form;
-    const { type } = this.state;
     return (
         <div>
         <div className={styles.top__container}>
@@ -164,7 +154,7 @@ class OrderGeneration extends React.Component {
         <div className={styles.bottom__container}>
             <div className={styles.bottom__tittle__container}>
                 <div className={styles.bottom__tittle}>
-                填写账单信息
+                填写订单信息
                 </div>
             </div>
             <div className={styles.bottom__rider__container}>
@@ -172,25 +162,6 @@ class OrderGeneration extends React.Component {
                 请选择您的乘车人数
                 </div>
                 <div className={styles.bottom__rider__number}>
-                <InputItem
-            {...getFieldProps('money2', {
-              normalize: (v, prev) => {
-                if (v && !/^(([1-9]\d*)|0)(\.\d{0,2}?)?$/.test(v)) {
-                  if (v === '.') {
-                    return '0.';
-                  }
-                  return prev;
-                }
-                return v;
-              },
-            })}
-            type={type}
-            placeholder="money format"
-            ref={el => this.inputRef = el}
-            onVirtualKeyboardConfirm={v => console.log('onVirtualKeyboardConfirm:', v)}
-            clear
-            moneyKeyboardWrapProps={moneyKeyboardWrapProps}
-          >数字键盘</InputItem>
                 </div>
             </div>
         </div>
