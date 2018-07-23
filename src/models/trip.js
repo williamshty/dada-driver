@@ -6,7 +6,8 @@ export default {
     state: {
         start:'',
         end: '',
-        length:''
+        length:'',
+        price:''
     },
   
     subscriptions: {

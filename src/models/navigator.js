@@ -5,7 +5,8 @@ export default {
   
     state: {
         sideMenuOpen:false,
-        orderGenerationTriggered:false
+        orderGenerationTriggered:false,
+        priceFocusTriggered:false
     },
   
     subscriptions: {

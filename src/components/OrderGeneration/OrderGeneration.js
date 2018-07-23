@@ -4,6 +4,7 @@ import { connect } from 'dva';
 import {SearchBar, List} from 'antd-mobile';
 import styles from './OrderGeneration.css';
 import {searchLocationByCoordinate,searchLocation} from '../../utils/baiduQuery'
+import OrderPriceForm from '../Forms/OrderPriceForm'
 // import pile from 'pile-ui'
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -49,7 +50,7 @@ class OrderGeneration extends React.Component {
     this.loadSearchedLocation.bind(this)(value)
     this.setState({endLocationActivated:true})
   }
-  
+
   render(){
     return (
         <div>
@@ -58,21 +59,21 @@ class OrderGeneration extends React.Component {
             <img width={12.5} src={require('../../assets/backArrow.png')}></img>
             </div>
             <div className={styles.search__container}>
-                <SearchBar 
-                placeholder="起点" 
-                maxLength={8} 
-                showCancelButton 
+                <SearchBar
+                placeholder="起点"
+                maxLength={8}
+                showCancelButton
                 onChange={this.onStartChange}
                 onSubmit={(value)=>{this.onSubmitStart(value)}}
                 value={this.state.start}
                 cancelText=" "/>
-                <SearchBar 
-                placeholder="终点" 
-                maxLength={8} 
-                showCancelButton 
+                <SearchBar
+                placeholder="终点"
+                maxLength={8}
+                showCancelButton
                 onChange={this.onEndChange}
                 onSubmit={(value)=>{this.onSubmitEnd(value)}}
-                value={this.state.end} 
+                value={this.state.end}
                 cancelText=" "/>
             </div>
             {(()=>{
@@ -150,12 +151,14 @@ class OrderGeneration extends React.Component {
                 )
             }
             })()}
+                 
         </div>
-        <div className={styles.bottom__container}>
+        <div className={this.props.navigator.priceFocusTriggered ? styles.bottom__container__move__up:styles.bottom__container}>
             <div className={styles.bottom__tittle__container}>
                 <div className={styles.bottom__tittle}>
                 填写订单信息
                 </div>
+                <img className={styles.divider__title} src={require('../../assets/矩形 609.png')}/>
             </div>
             <div className={styles.bottom__rider__container}>
                 <div className={styles.bottom__rider__text}>
@@ -163,9 +166,25 @@ class OrderGeneration extends React.Component {
                 </div>
                 <div className={styles.bottom__rider__number}>
                 </div>
+                <div className={styles.bottom__rider__estimate__distance}>
+                    <div className={styles.bottom__rider__typography}>
+                    总路程共计X.XX千米，预计99分钟后到达
+                    </div>
+                </div>
+                <div className={styles.bottom__rider__estimate__price}>
+                    <div className={styles.bottom__rider__typography}>
+                    建议价格XX.XX元
+                    </div>
+                </div>
+                <div className={styles.bottom__rider__price}>
+                <img className={styles.money__sign} src={require('../../assets/组 18.png')}/>
+                    <OrderPriceForm/>
+                    <img className={styles.divider__price} src={require('../../assets/矩形 609.png')}/>
+                </div>
+                <div className={styles.bottom__rider__submit}>
+                </div>
             </div>
         </div>
-    
     </div>
     );
   }
@@ -173,7 +192,7 @@ class OrderGeneration extends React.Component {
 };
 
 OrderGeneration.propTypes = {
-  
+
 };
 
 function mapStateToProps(state) {
