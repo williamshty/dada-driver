@@ -1,6 +1,7 @@
 import axios from 'axios'
-const ak = 'YC8DWemOR8iZ12lUX7b63XAGWbNSgqmI'
-
+import {ak, amap_key} from './keys'
+console.log(ak)
+console.log(amap_key)
 export async function searchLocation(param){
     let resp = await axios
     .get(`https://api.map.baidu.com/place/v2/search?query=${param}&region=成都&output=json&ak=${ak}`);
@@ -9,6 +10,12 @@ export async function searchLocation(param){
 
 export async function searchLocationByCoordinate(location){
     let resp = await axios
-    .get(`http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=30.551020799999996,104.06756279999999&output=json&pois=0&ak=YC8DWemOR8iZ12lUX7b63XAGWbNSgqmI`);
+    .get(`http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=${location.lat},${location.lng}&output=json&pois=0&ak=YC8DWemOR8iZ12lUX7b63XAGWbNSgqmI`);
     return JSON.parse(resp.data.slice(29,resp.data.length-1)).result.formatted_address
+}
+
+export async function getEstimatedRoute(start,end){
+    let resp = await axios
+    .get(`https://restapi.amap.com/v3/direction/driving?origin=${start.lng},${start.lat}&destination=${end.lng},${end.lat}&output=json&key=${amap_key}`);
+    return resp.data.route
 }

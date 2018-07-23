@@ -35,12 +35,6 @@ export default {
       updateCurrentLocation(state, action){
           return { ...state, ...action.payload };
       },
-      updateStartLocation(state, action){
-        return { ...state, ...action.payload };
-      },
-      updateEndLocation(state, action){
-        return { ...state, ...action.payload };
-      },
       toggleTraffic(state, action){
         return { ...state, ...action.payload };
       }

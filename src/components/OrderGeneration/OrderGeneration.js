@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'dva';
+import * as moment from 'moment'
 import {SearchBar, List} from 'antd-mobile';
 import styles from './OrderGeneration.css';
-import {searchLocationByCoordinate,searchLocation} from '../../utils/baiduQuery'
+import {searchLocationByCoordinate,searchLocation,getEstimatedRoute} from '../../utils/baiduQuery'
 import OrderPriceForm from '../Forms/OrderPriceForm'
 // import pile from 'pile-ui'
 const Item = List.Item;
@@ -20,19 +21,54 @@ class OrderGeneration extends React.Component {
         startLocationActivated:false,
         selectedEndLocation:'',
         endLocationActivated:false,
+        estimatedDistance:0,
+        estimatedTime:0,
+        estimatedPrice:0
     }
   }
   componentDidMount() {
     this.loadLocationByCoordinate.bind(this)(this.state.currentLocation)
+    this.props.dispatch({
+        type:'mapData/save',
+        payload:{
+            startLocation:this.state.currentLocation
+        }
+    })
+  }
+  componentDidUpdate() {
+      if(this.props.mapData.endLocation){
+        this.loadEstimatedRoute.bind(this)()
+      }
   }
   async loadLocationByCoordinate (coordinate) {
     const result = await searchLocationByCoordinate(coordinate)
+    this.props.dispatch({
+        type:'mapData/save',
+        payload:{
+            startLocationDescription:result
+        }
+    })
     this.setState({start:result})
     console.log(result)
   }
+  async loadEstimatedRoute () {
+    const result = await getEstimatedRoute(this.props.mapData.startLocation, this.props.mapData.endLocation)
+    console.log(result)
+    this.setState({
+        estimatedDistance:(result.paths[0].distance/1000).toFixed(1),
+        estimatedTime:Math.floor(result.paths[0].duration/60)+1,
+        estimatedPrice:Math.floor(result.taxi_cost)+1
+    })
+    this.props.dispatch({
+        type:'trip/save',
+        payload:{
+            price:Math.floor(result.taxi_cost)+1
+        }
+    })
+  }
   async loadSearchedLocation (param) {
     const result = await searchLocation(param)
-    console.log(result)
+    // console.log(result)
     this.setState({locationHintList:result})
   }
   onStartChange = (value) => {
@@ -49,6 +85,16 @@ class OrderGeneration extends React.Component {
   onSubmitEnd = (value) => {
     this.loadSearchedLocation.bind(this)(value)
     this.setState({endLocationActivated:true})
+  }
+  getBottomContainerClass = () =>{
+      if(this.props.navigator.priceFocusTriggered===0)
+      {
+        return styles.bottom__container
+      }
+      else if(this.props.navigator.priceFocusTriggered===1){
+          return styles.bottom__container__move__up
+      }
+      else return styles.bottom__container__move__down
   }
 
   render(){
@@ -153,7 +199,10 @@ class OrderGeneration extends React.Component {
             })()}
                  
         </div>
-        <div className={this.props.navigator.priceFocusTriggered ? styles.bottom__container__move__up:styles.bottom__container}>
+        {(()=>{
+            if(this.state.selectedEndLocation)
+        return (
+            <div className={this.getBottomContainerClass()}>
             <div className={styles.bottom__tittle__container}>
                 <div className={styles.bottom__tittle}>
                 填写订单信息
@@ -168,12 +217,13 @@ class OrderGeneration extends React.Component {
                 </div>
                 <div className={styles.bottom__rider__estimate__distance}>
                     <div className={styles.bottom__rider__typography}>
-                    总路程共计X.XX千米，预计99分钟后到达
+                    总路程共计{this.state.estimatedDistance}千米，
+                    预计{this.state.estimatedTime}分钟后到达
                     </div>
                 </div>
                 <div className={styles.bottom__rider__estimate__price}>
                     <div className={styles.bottom__rider__typography}>
-                    建议价格XX.XX元
+                    建议价格{this.state.estimatedPrice}元
                     </div>
                 </div>
                 <div className={styles.bottom__rider__price}>
@@ -185,6 +235,8 @@ class OrderGeneration extends React.Component {
                 </div>
             </div>
         </div>
+        )
+      })()}  
     </div>
     );
   }

@@ -26,7 +26,7 @@ class OrderPriceForm extends React.Component {
     this.props.dispatch({
       type:'navigator/save',
       payload:{
-        priceFocusTriggered:true
+        priceFocusTriggered:1
       }
     })
   }
@@ -47,9 +47,18 @@ class OrderPriceForm extends React.Component {
                 return v;
               },
             })}
+            value={this.props.trip.price?this.props.trip.price:0}
             type={type}
             placeholder=""
             ref={el => this.inputRef = el}
+            onBlur={()=>{
+              this.props.dispatch({
+                type:'navigator/save',
+                payload:{
+                  priceFocusTriggered:2
+                }
+              })
+            }}
             onVirtualKeyboardConfirm={v => {
                 this.props.dispatch({
                   type:'trip/save',
@@ -60,7 +69,7 @@ class OrderPriceForm extends React.Component {
                 this.props.dispatch({
                   type:'navigator/save',
                   payload:{
-                    priceFocusTriggered:false
+                    priceFocusTriggered:2
                   }
                 })
             }}

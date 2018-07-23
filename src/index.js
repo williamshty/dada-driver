@@ -9,7 +9,8 @@ const app = dva({
     initialState:{
         navigator:{
             sideMenuStatus: false,
-            orderGenerationTriggered:false
+            orderGenerationTriggered:false,
+            priceFocusTriggered: 0
         },
         mapData:{
             currentLocation:currentLocation

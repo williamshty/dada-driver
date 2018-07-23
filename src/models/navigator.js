@@ -6,7 +6,7 @@ export default {
     state: {
         sideMenuOpen:false,
         orderGenerationTriggered:false,
-        priceFocusTriggered:false
+        priceFocusTriggered:0
     },
   
     subscriptions: {
