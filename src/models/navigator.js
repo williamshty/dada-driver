@@ -1,4 +1,4 @@
-
+import {routerRedux} from 'dva/router'
 export default {
 
     namespace: 'navigator',
@@ -16,8 +16,13 @@ export default {
   
     effects: {
       *fetch({ payload }, { call, put }) {  // eslint-disable-line
-        yield put({ type: 'save' });
+        yield put();
       },
+      *toLogIn({call, put}){
+        yield put(
+          routerRedux.push({pathname:'/login'})
+        )
+      }
     },
   
     reducers: {
@@ -29,6 +34,10 @@ export default {
       // }
       toggleOrderGeneration(state){
         return { ...state, orderGenerationTriggered: !state.orderGenerationTriggered};
+      },
+      toLogIn(state){
+        routerRedux.push({pathname:'/login'})
+        return {...state}
       }
     },
   

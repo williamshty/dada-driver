@@ -23,7 +23,7 @@ class InputItem extends React.Component {
   isFunction(property){
       if(typeof property==='function') return true
       else {
-          console.log('notFunction')
+          // console.log('notFunction')
         return false
       }
   }

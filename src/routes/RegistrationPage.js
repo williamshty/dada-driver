@@ -3,6 +3,7 @@ import { connect } from 'dva';
 import styles from './RegistartionPage.css';
 import InputItem from '../components/Forms/InputItem';
 import {getRegistrationVerificationCode, registerNewUser} from '../utils/webServices'
+import {routerRedux} from 'dva/router'
 class RegistrationPage extends React.Component {
   constructor(props) {
     super(props);
@@ -134,7 +135,9 @@ class RegistrationPage extends React.Component {
             <div className={styles.submit__botton} onClick={()=>this.submitRegistrationForm()}>
             提交
             </div>
-            <div className={styles.login__text}>
+            <div className={styles.login__text} onClick={()=>{
+              this.props.dispatch(routerRedux.push({pathname:'/login'}))
+              }}>
             返回登录
             </div>
             <div className={styles.logo__container}>

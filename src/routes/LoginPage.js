@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import styles from './LoginPage.css';
 import InputItem from '../components/Forms/InputItem'
+import {routerRedux} from 'dva/router'
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
@@ -40,14 +41,13 @@ class LoginPage extends React.Component {
             <div className={styles.verification__button}>
             发送验证码
             </div>
-            {/* <div className={styles.verification__button}>
-            发送验证码
-            </div> */}
 
             <div className={styles.submit__botton}>
             提交
             </div>
-            <div className={styles.registration__text}>
+            <div className={styles.registration__text} onClick={()=>{
+              this.props.dispatch(routerRedux.push({pathname:'/'}))
+              }}>
             注册账号
             </div>
             <div className={styles.logo__container}>
