@@ -59,6 +59,13 @@ class OrderPriceForm extends React.Component {
                 }
               })
             }}
+            onChange={v => {
+              this.props.dispatch({
+                type:'trip/save',
+                payload:{
+                    price:v
+                }
+              })}}
             onVirtualKeyboardConfirm={v => {
                 this.props.dispatch({
                   type:'trip/save',

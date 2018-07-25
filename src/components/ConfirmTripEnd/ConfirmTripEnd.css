@@ -1,0 +1,64 @@
+.bottom__container{
+    position: absolute;
+    z-index: 2000;
+    width:100%;
+    margin-top:451px;
+    height: 216px;
+    font-family: 'PingFang-SC-Medium';
+    /* background-color: #000; */
+}
+.bottom__background__mask{
+    position: absolute;
+    z-index: 1000;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+    /* background-color: #000; */
+}
+
+.bottom__confirm__card{
+    width: 353px;
+    height: 147px;
+    margin-left: 11px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.bottom__submit__button{
+    width: 100%;
+    height: 44px;
+    width: 353px;
+    margin-top:11px;
+    margin-left:11px;
+    background-image: linear-gradient(to right, #1e5799 0%,#2774e8 0%,#2283e2 70%,#1c91dc 100%);
+    border-radius: 5px;
+    padding-top:13.5px;
+    box-sizing: border-box;
+    color:#fff;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 100 !important; 
+}
+
+.bottom__card__title{
+    padding-top: 44px;
+    text-align: center;
+    color:#333333;
+    font-size: 20px;
+    font-weight: 500;
+    /* position: absolute; */
+}
+.bottom__card__info{
+    text-align: center;
+    color:#999999;
+    font-size: 11px;
+    margin-top: 8.5px;
+}
+.bottom__card__contact{
+    margin-top: 8.5px;
+    text-align: center;
+    color:#2774e8;
+    text-decoration-line: underline;
+    font-size: 11px;
+}

@@ -33,9 +33,7 @@ class SideMenu extends React.Component {
           <div className={this.state.buttonStyle}>
           <img alt="avatar" width={38} onClick={()=>this.onOpenChange()} src={require('../../assets/avatar.png')}></img>
           </div>
-          <div className={styles.button__bottom} onClick={()=>this.props.dispatch({type:'navigator/toggleOrderGeneration'})}>
-            <div className={styles.button__bottom__filler}></div>
-          </div>
+
           {(()=>{
             if(!this.state.trafficActivated){
               return (

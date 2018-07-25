@@ -18,7 +18,7 @@ class MapComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.loadSearchedLocation.bind(this)('牛市口')
+    // this.loadSearchedLocation.bind(this)('牛市口')
     loadPosition(this.props.mapData.dispatch)
     console.log(this.props.mapData)
     // this.props.mapData.dispatch({type:'navigator/toggleOrderGeneration'})

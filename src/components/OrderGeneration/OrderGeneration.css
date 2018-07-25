@@ -21,7 +21,7 @@ to {top:0px;}
 }
 .back__arrow{
     position: absolute;
-    margin-left: 1%;
+    margin-left: 11px;
     margin-top:4%
 }
 .start__hint__container{
@@ -44,10 +44,10 @@ to {top:0px;}
 .bottom__container{
     position: absolute;
     z-index: 1000;
-    margin-top:333.5px;
+    margin-top:357.5px;
     width: 100%;
     height: 50%;
-    background-color: #fff;
+    /* background-color: #fff; */
     animation: bottom-container-up .4s;
     animation-fill-mode:forwards;
     animation-timing-function: ease-out;
@@ -60,10 +60,10 @@ to {top:0%;}
 .bottom__container__move__up{
     position: absolute;
     z-index: 1000;
-    margin-top:333.5px;
+    margin-top:357.5px;
     width: 100%;
     height: 50%;
-    background-color: #fff;
+    /* background-color: #fff; */
     animation:bulk-move-up .4s;
     animation-fill-mode:forwards;
     animation-timing-function: ease-out;
@@ -71,29 +71,37 @@ to {top:0%;}
 @keyframes bulk-move-up
 {
 from {top:0px;}
-to {top:-150px;}
+to {top:-140px;}
 }
 .bottom__container__move__down{
     position: absolute;
     z-index: 1000;
-    margin-top:333.5px;
+    margin-top:357.5px;
     width: 100%;
     height: 50%;
-    background-color: #fff;
+    /* background-color: #fff; */
     animation:bulk-move-down .4s;
     animation-fill-mode:forwards;
     animation-timing-function: ease-out;
 }
 @keyframes bulk-move-down
 {
-from {top:-150px;}
+from {top:-140px;}
 to {top:0px;}
 }
 .bottom__tittle__container{
-    position: relative;
-    width: 100%;
-    height: 43px;
-    /* background-color: green; */
+    width: 353.5px;
+	height: 28.5px;
+	opacity: 0.5;
+	border-radius: 5px;
+    background-color: #000000;
+    margin-left:11px;
+    color:white;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top:7.5px;
+    font-family: 'PingFang-SC-Medium';
+    font-weight: 100 !important; 
 }
 .bottom__tittle{
     font-size: 18px;
@@ -101,14 +109,18 @@ to {top:0px;}
     text-align: center;
 }
 .bottom__rider__container{
-    width: 100%;
-    height: 105px;
-    /* background-color: red; */
+    margin-top:11px;
+    margin-left:11px;
+    width: 353px;
+	height: 202px;
+	border-radius: 5px;
+    background-color: #ffffff;
+    box-sizing: content-box;
+    font-family: 'PingFang-SC-Medium' ;
 }
 .bottom__rider__text{
     width: 100%;
-    height: 37px;
-    padding-top:15px;
+    margin-top:12px;
     /* background-color: green; */
     color:#aaa;
     text-align: center;
@@ -119,8 +131,10 @@ to {top:0px;}
 }
 .bottom__rider__number{
     width: 100%;
-    height: 42px;
-    background-color: blue;
+    height: 65px;
+    padding-top:23px;
+    /* background-color: blue; */
+    box-sizing: border-box;
 }
 .bottom__rider__estimate__distance{
     width: 100%;
@@ -136,14 +150,31 @@ to {top:0px;}
 }
 .bottom__rider__price{
     width: 100%;
-    height: 52px;
-    padding-top: 29px;
+    margin-top:31.5px;
+    height: 31.5px;
     /* background-color: green; */
 }
+.price__warning{
+    margin-top:12px;
+    color:#e24526;
+    text-align: center;
+    font-size: 14px;
+}
+
 .bottom__rider__submit{
     width: 100%;
-    height: 53.5px;
-    /* background-color: yellow; */
+    height: 44px;
+    width: 353px;
+    margin-top:11px;
+    margin-left:11px;
+    background-image: linear-gradient(to right, #1e5799 0%,#2774e8 0%,#2283e2 70%,#1c91dc 100%);
+    border-radius: 5px;
+    padding-top:13px;
+    box-sizing: border-box;
+    color:#fff;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 100 !important; 
 }
 .divider__price{
     height: 1px;
@@ -163,6 +194,31 @@ to {top:0px;}
     height: 23px;
     position: absolute;
     z-index: 2000;
-    margin-top:27px;
-    margin-left:9px;
+    margin-top:0px;
+    margin-left:36.5px;
+}
+.circle__container{
+    margin-left:39.5px;
+    height: 42px;
+    background-color:black;
+}
+
+.circle{
+    height: 42px;
+    width:42px;
+    border-radius: 21px;
+    background-color: red;
+    position: absolute;
+    margin-left: 14px;
+    padding-top:13px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: bold;
+}
+
+.cicle__active{
+    height: 42px;
+    width:42px;
+    border-radius: 21px;
+    background-color: blue;
 }

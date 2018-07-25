@@ -1,0 +1,130 @@
+.base__container{
+  width:100%;
+  height: 100%;
+  position: absolute;
+  background-color: #f2f2f2;
+}
+.registration__text{
+  /* background-color: red; */
+  position: absolute;
+  margin-left: 72.5px;
+  margin-top: 75px;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  vertical-align: bottom;
+  color:#333
+}
+
+.registration__icon{
+  position: absolute;
+  margin-left: 29px;
+  margin-top: 77.5px;
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+}
+
+.registration__character{
+  font-size: 32px;
+  font-weight: 600;
+}
+.registration__letter{
+  font-size: 14px;
+  font-weight: 400;
+}
+.tel__container{
+  /* background-color: red; */
+  position: absolute;
+  margin-left: 11px;
+  margin-top: 198px;
+  width: 353px;
+  height: 55px;
+  border-radius: 27.5px;
+}
+.verification__container{
+  /* background-color: red; */
+  position: absolute;
+  margin-left: 11px;
+  margin-top: 264px;
+  width: 353px;
+  height: 55px;
+  border-radius: 27.5px;
+}
+.submit__botton{
+  position: absolute;
+  cursor: pointer;
+  height: 44px;
+  width: 353px;
+  margin-top:366px;
+  margin-left:11px;
+  background-image: linear-gradient(to right, #1e5799 0%,#2774e8 0%,#2283e2 70%,#1c91dc 100%);
+  border-radius: 5px;
+  padding-top:13.5px;
+  box-sizing: border-box;
+  color:#fff;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 100 !important; 
+}
+.login__text{
+  /* background-color: red; */
+  position: absolute;
+  margin-top: 432px;
+  width: 100%;
+  height: 14.5px;
+  text-align: center;
+  color:#2774e8;
+  text-decoration-line: underline;
+  font-size: 14px;
+}
+.logo__container{
+  /* background-color: red; */
+  position: absolute;
+  margin-left: 117.5px;
+  margin-top: 612px;
+  width: 140.5px;
+  height: 41px;
+  background-size: 140.5px 41px;
+  background-image: url('../assets/dada_logo.png');
+}
+.verification__button{
+  position: absolute;
+  margin-left: 254px;
+  margin-top: 272.5px;
+  width: 99px;
+  height: 38px;
+  border-radius: 19px;
+  padding-top: 11px;
+  text-align: center;
+  font-size: 14px;
+  color: #2774e8;
+  border:1px solid #2774e8;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.verification__sent{
+  position: absolute;
+  margin-left: 254px;
+  margin-top: 272.5px;
+  width: 99px;
+  height: 38px;
+  border-radius: 19px;
+  padding-top: 11px;
+  text-align: center;
+  font-size: 14px;
+  color: #999999;
+  border:1px solid #999999;
+  box-sizing: border-box;
+}
+
+.error__text{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 330px;
+  font-size: 14px;
+  color: #f2112d;
+
+}

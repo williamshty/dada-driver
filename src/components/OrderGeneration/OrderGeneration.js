@@ -23,7 +23,9 @@ class OrderGeneration extends React.Component {
         endLocationActivated:false,
         estimatedDistance:0,
         estimatedTime:0,
-        estimatedPrice:0
+        estimatedPrice:0,
+        routeShouldUpdate:true,
+        riderNumber:0
     }
   }
   componentDidMount() {
@@ -36,9 +38,6 @@ class OrderGeneration extends React.Component {
     })
   }
   componentDidUpdate() {
-      if(this.props.mapData.endLocation){
-        this.loadEstimatedRoute.bind(this)()
-      }
   }
   async loadLocationByCoordinate (coordinate) {
     const result = await searchLocationByCoordinate(coordinate)
@@ -57,7 +56,8 @@ class OrderGeneration extends React.Component {
     this.setState({
         estimatedDistance:(result.paths[0].distance/1000).toFixed(1),
         estimatedTime:Math.floor(result.paths[0].duration/60)+1,
-        estimatedPrice:Math.floor(result.taxi_cost)+1
+        estimatedPrice:Math.floor(result.taxi_cost)+1,
+        routeShouldUpdate:false
     })
     this.props.dispatch({
         type:'trip/save',
@@ -136,6 +136,7 @@ class OrderGeneration extends React.Component {
                                 lng:hint.location.lng,
                                 lat:hint.location.lat
                             }})
+                            this.setState({routeShouldUpdate:true})
                             this.props.dispatch({
                                 type:'mapData/save',
                                 payload:{
@@ -172,6 +173,7 @@ class OrderGeneration extends React.Component {
                                 lng:hint.location.lng,
                                 lat:hint.location.lat
                             }})
+                            this.setState({routeShouldUpdate:true})
                             this.props.dispatch({
                                 type:'mapData/save',
                                 payload:{
@@ -200,42 +202,39 @@ class OrderGeneration extends React.Component {
                  
         </div>
         {(()=>{
-            if(this.state.selectedEndLocation)
-        return (
-            <div className={this.getBottomContainerClass()}>
-            <div className={styles.bottom__tittle__container}>
-                <div className={styles.bottom__tittle}>
-                填写订单信息
-                </div>
-                <img className={styles.divider__title} src={require('../../assets/矩形 609.png')}/>
-            </div>
-            <div className={styles.bottom__rider__container}>
-                <div className={styles.bottom__rider__text}>
-                请选择您的乘车人数
-                </div>
-                <div className={styles.bottom__rider__number}>
-                </div>
-                <div className={styles.bottom__rider__estimate__distance}>
-                    <div className={styles.bottom__rider__typography}>
-                    总路程共计{this.state.estimatedDistance}千米，
-                    预计{this.state.estimatedTime}分钟后到达
+            if(this.state.selectedEndLocation){
+                if(this.state.routeShouldUpdate)this.loadEstimatedRoute.bind(this)()
+                return (
+                    <div className={this.getBottomContainerClass()}>
+                    <div className={styles.bottom__tittle__container}>
+                    总路程{this.state.estimatedDistance}km，
+                    预计耗时{this.state.estimatedTime}分钟
+                    </div>
+                    <div className={styles.bottom__rider__container}>
+                        <div className={styles.bottom__rider__number}>
+                            <div className={styles.circle__container}>
+                            {(()=>{
+                            })()}
+                            </div>
+                        </div>
+                        <div className={styles.bottom__rider__text}>
+                        选择乘车人数
+                        </div>
+                        <div className={styles.bottom__rider__price}>
+                        <img className={styles.money__sign} src={require('../../assets/组 18.png')}/>
+                            <OrderPriceForm/>
+                        </div>
+                        <div className={styles.price__warning}>
+                        *您的报价过低，可能影响您的匹配时间
+                        </div>
+                    </div>
+                    <div className={styles.bottom__rider__submit}>
+                        发布订单
                     </div>
                 </div>
-                <div className={styles.bottom__rider__estimate__price}>
-                    <div className={styles.bottom__rider__typography}>
-                    建议价格{this.state.estimatedPrice}元
-                    </div>
-                </div>
-                <div className={styles.bottom__rider__price}>
-                <img className={styles.money__sign} src={require('../../assets/组 18.png')}/>
-                    <OrderPriceForm/>
-                    <img className={styles.divider__price} src={require('../../assets/矩形 609.png')}/>
-                </div>
-                <div className={styles.bottom__rider__submit}>
-                </div>
-            </div>
-        </div>
-        )
+                )
+            }
+        
       })()}  
     </div>
     );

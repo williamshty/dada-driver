@@ -1,0 +1,59 @@
+.bottom__container{
+    position: absolute;
+    z-index: 2000;
+    width:100%;
+    margin-top:540px;
+    height: 113px;
+    font-family: 'PingFang-SC-Medium';
+    /* background-color: #000; */
+}
+.bottom__trip__card{
+    width: 353px;
+    height: 113px;
+    margin-left: 11px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.bottom__trip__title{
+    padding-top: 18px;
+    text-align: center;
+    color:#666666;
+    font-size: 18px;
+    font-weight: 550;
+    /* position: absolute; */
+}
+.bottom__distance__title{
+    position: absolute;
+    margin-left: 54.5px;
+    margin-top: 23px;
+    font-size: 14px;
+    color:#666;
+}
+.bottom__time__title{
+    position: absolute;
+    margin-left: 223.5px;
+    margin-top: 23px;
+    font-size: 14px;
+    color:#666;
+}
+.bottom__distance{
+    position: absolute;
+    margin-left: 54.5px;
+    margin-top: 42px;
+    font-size: 18px;
+    color:#333;
+    font-weight: 600;
+    width: 70px;
+    text-align: center;
+}
+.bottom__time{
+    position: absolute;
+    margin-left: 223.5px;
+    margin-top: 42px;
+    font-size: 18px;
+    color:#333;
+    font-weight: 600;
+    width: 84px;
+    text-align: center;
+}
