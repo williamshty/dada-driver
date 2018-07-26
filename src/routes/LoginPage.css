@@ -102,3 +102,27 @@
     border:1px solid #2774e8;
     box-sizing: border-box;
 }
+.verification__sent{
+    position: absolute;
+    margin-left: 254px;
+    margin-top: 272.5px;
+    width: 99px;
+    height: 38px;
+    border-radius: 19px;
+    padding-top: 11px;
+    text-align: center;
+    font-size: 14px;
+    color: #999999;
+    border:1px solid #999999;
+    box-sizing: border-box;
+  }
+  
+  .error__text{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-top: 330px;
+    font-size: 14px;
+    color: #f2112d;
+  
+  }

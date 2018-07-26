@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './FindingDriver.css'
+import ReactSVG from 'react-svg'
 class FindingDriver extends React.Component {
   constructor(props) {
     super(props);
@@ -26,10 +27,13 @@ class FindingDriver extends React.Component {
         </div> */}
           <div className={styles.bottom__container}>
             <div className={styles.bottom__waiting__card}>
+                <div className={styles.bottom__waiting__icon}>
+                </div>
                 <div className={styles.bottom__waiting__tittle}>
                 等待司机接单
                 </div>
-                <div className={styles.bottom__waiting__time}>
+                <img className={styles.divider__title} src={require('../../assets/矩形 609.png')}/>
+                {/* <div className={styles.bottom__waiting__time}>
                 您已等待
                 &nbsp;{Math.floor(this.state.waitingTime/60)}&nbsp;
                 分
@@ -37,7 +41,16 @@ class FindingDriver extends React.Component {
                 秒
                 </div>
                 <div className={styles.bottom__waiting__cancel}>
-                临时有事，取消订单
+                取消订单
+                </div>      */}
+                <img className={styles.loading__anim} src={require('./Rolling.svg')} alt="rolling"/>
+                <div className={styles.bottom__waiting__time}>
+                已等待
+                &nbsp;{this.state.waitingTime}&nbsp;
+                秒
+                </div>
+                <div className={styles.bottom__waiting__cancel}>
+                取消订单
                 </div>
             </div>
            

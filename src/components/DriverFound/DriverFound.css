@@ -2,84 +2,111 @@
     position: absolute;
     z-index: 2000;
     width:100%;
-    height: 160px;
-    margin-top: 507px;
+    height: 165.5px;
+    margin-top: 487.5px;
     font-family: 'PingFang-SC-Medium';
     /* background-color: black; */
     font-weight: 400;
 }
 .bottom__car__card{
     width: 353px;
-    height: 146px;
+    height: 165.5px;
     margin-left: 11px;
     border-radius: 5px;
     background-color: #fff;
     box-sizing: border-box;
 }
 .bottom__card__title{
-    padding-top: 18px;
-    font-size: 18px;
+    margin-top: 21px;
+    margin-left: 152px;
+    font-size: 14px;
     color: #666666;
     text-align: center;
+    position: absolute;
+}
+.bottom__card__title__icon{
+    margin-top: 20px;
+    margin-left: 133px;
+    width:16px;
+    height: 16px;
+    background-color: #000;
+    color: #666666;
+    text-align: center;
+    position: absolute;
+}
+.bottom__card__corner__icon{
+    margin-top: 15px;
+    margin-left: 310px;
+    width:26px;
+    height: 26px;
+    position: absolute;
+    background-color: #000;
 }
 .bottom__brand__title{
     position: absolute;
-    margin-left: 21.5px;
-    margin-top: 18px;
+    margin-left: 42.5px;
+    margin-top: 71px;
     font-size: 14px;
     color:#666;
 }
 .bottom__brand{
     position: absolute;
-    margin-left: 33px;
-    margin-top: 37px;
+    margin-left: 54.5px;
+    margin-top: 96px;
     width: 32px;
     height: 32px;
     border-radius: 16px;
-    background-color: red;
+    background-color: #000;
 }
 .bottom__color__title{
     position: absolute;
-    margin-left: 122.5px;
-    margin-top: 18px;
+    margin-left: 255.5px;
+    margin-top: 71px;
     font-size: 14px;
     color:#666;
 }
 .bottom__color{
     position: absolute;
-    margin-left: 134px;
-    margin-top: 37px;
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
-    background-color: blue;
+    margin-left: 270px;
+    margin-top: 105.5px;
+    font-size: 14px;
+    font-weight: 400;
+   
 }
 .bottom__license__title{
     position: absolute;
-    margin-left: 241.5px;
-    margin-top: 18px;
+    margin-left: 156px;
+    margin-top: 71px;
     font-size: 14px;
     color:#666;
 }
 .bottom__license{
     position: absolute;
-    margin-left: 221.5px;
-    margin-top: 37px;
+    margin-left: 137.5px;
+    margin-top: 105.5px;
     font-size: 14px;
-    color:#fff;
+    color:#333333;
     text-align: center;
-    font-weight: 700;
-    width:109.5px;
-    height: 32px;
-    background-color: #5390ec;
-    border-radius: 2px;
-    padding-top: 9px;
-    box-sizing: border-box;
+    font-weight: 600;
+    /* width:78px; */
+    /* height: 13px; */
 }
 .bottom__car__cancel{
-    margin-top: 81.5px;
+    position: absolute;
+    width: 353px;
+    margin-top: 132.5px;
     text-align: center;
     color:#2774e8;
     text-decoration-line: underline;
     font-size: 11px;
 }
+
+.divider__title{
+    width:331px;
+    margin-left: 11px;
+    margin-right: 11px;
+    margin-top: 54px;
+    /* padding: 0; */
+    position: absolute;
+    /* margin-top:11.5px;  */
+  }

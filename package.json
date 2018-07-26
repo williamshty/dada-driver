@@ -22,6 +22,7 @@
     "react-amap": "^1.2.7",
     "react-bmap": "^1.0.78",
     "react-dom": "^16.2.0",
+    "react-svg": "^5.0.6",
     "stilr": "^1.3.0"
   },
   "devDependencies": {

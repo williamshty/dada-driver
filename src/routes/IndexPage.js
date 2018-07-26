@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './IndexPage.css';
+import {routerRedux} from 'dva/router';
 import MapComponent from '../components/MapComponent';
 import SideMenu from '../components/SideMenu/SideMenu';
 import OrderGeneration from '../components/OrderGeneration/OrderGeneration'
@@ -15,6 +16,10 @@ class IndexPage extends React.Component {
   }
   componentDidMount(){
     // console.log(this.props)
+    if(!localStorage.getItem('isLoggedIn')){
+      console.log('not logged in')
+      this.props.dispatch(routerRedux.push({pathname:'/login'}))
+    }
   }
     render(){
       return (
@@ -31,12 +36,12 @@ class IndexPage extends React.Component {
             )
             else return <OrderGeneration/>
           })()} */}
-          <SideMenu/>
+          {/* <SideMenu/> */}
           {/* <FindingDriver/> */}
-          {/* <DriverFound/> */}
+          <DriverFound/>
           {/* <InTrip/> */}
           {/* <TripFinished/> */}
-          <ConfirmTripEnd/>
+          {/* <ConfirmTripEnd/> */}
           <div className={styles.map__container}>
             <MapComponent/>
           </div>

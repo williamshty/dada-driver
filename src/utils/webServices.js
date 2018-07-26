@@ -12,3 +12,9 @@ export async function getRegistrationVerificationCode(phoneNum) {
     let resp = await axios.get('/verification/register?phoneNum='+phoneNum)
     return resp
 }
+
+export async function getLoginVerificationCode(phoneNum){
+    let resp = await axios.get('/verification/login?phoneNum='+phoneNum)
+    return resp
+}
+
