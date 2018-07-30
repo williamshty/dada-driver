@@ -92,17 +92,18 @@
     animation: mymove .6s;
     animation-fill-mode:forwards;
     animation-timing-function: ease-out;
+    opacity: 0;
 }
 
 .button__animated_reverse{
     position:absolute;
     margin-left: 11px;
     margin-top:19px;
-    z-index: 1000;
-    animation: mymove_reverse .6s;
+    z-index: 1;
+    /* animation: mymove_reverse .6s;
     animation-fill-mode:forwards;
     animation-timing-function: ease-out;
-
+    opacity: 0; */
 }
 
 @keyframes mymove
@@ -118,12 +119,14 @@ to {top:0px;}
 
 
 .sidebar__background {
- background: url('../../assets/sidebar-layer1.png') no-repeat top;
- background-size: 275px 667px;
+ /* background: url('../../assets/sidebar-layer1.png') no-repeat top; */
+ width: 275px;
+ height: 667px;
+ background-color: #2b71db;
 }
 .sidebar__mask {
  background-size: 275px 667px;
- background: url('../../assets/sidebar-mask.png') no-repeat top;
+ /* background: url('../../assets/sidebar-mask.png') no-repeat top; */
 }
 .sidebar__background__filler {
  width: 275px;
@@ -131,13 +134,110 @@ to {top:0px;}
 }
 
 .sidebar__menu {
-    margin-top: 155px;
+    margin-top: 96px;
     position: absolute;
-    background-size: 275px 512px;
-    background: url('../../assets/sidebar-layer2.png') no-repeat top;
+    width: 275px;
+    height: 571px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333333;
+    /* background: url('../../assets/sidebar-layer2.png') no-repeat top; */
 }
 .sidebar__menu__filler {
     width: 275px;
-    height: 512px;
+    height: 571px;
     font-size: 1em;
+}
+
+.phone__number{
+    font-size: 18px;
+    font-family: "PingFang-SC-Heavy";
+    color:#fff;
+    margin-top: 61px;
+    margin-left: 11.5px;
+    position: absolute;
+}
+.driver__icon{
+    margin-left: 10.5px;
+    margin-top: 48px;
+    position: absolute;
+    background-image: url('../../assets/side_driver.png');
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+}
+.driver__text{
+    position: absolute;
+    margin-left: 36.5px;
+    margin-top: 50px;
+}
+.history__icon{
+    margin-left: 10.5px;
+    margin-top: 93.5px;
+    position: absolute;
+    background-image: url('../../assets/side_history.png');
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+}
+.history__text{
+    position: absolute;
+    margin-left: 36.5px;
+    margin-top: 95px;
+}
+.wallet__icon{
+    margin-left: 10.5px;
+    margin-top: 139px;
+    position: absolute;
+    background-image: url('../../assets/side_wallet.png');
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+}
+.wallet__text{
+    position: absolute;
+    margin-left: 36.5px;
+    margin-top: 140px;
+}
+.privacy__icon{
+    margin-left: 10.5px;
+    margin-top: 183.5px;
+    position: absolute;
+    background-image: url('../../assets/side_privacy.png');
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+}
+.privacy__text{
+    position: absolute;
+    margin-left: 36.5px;
+    margin-top: 185.5px;
+}
+.about__icon{
+    margin-left: 10.5px;
+    margin-top: 230px;
+    position: absolute;
+    background: url('../../assets/side_about.png') no-repeat;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+}
+.about__text{
+    position: absolute;
+    margin-left: 36.5px;
+    margin-top: 230.5px;
+}
+.exit__icon{
+    margin-left: 10.5px;
+    margin-top: 292px;
+    position: absolute;
+    background: url('../../assets/side_exit.png') no-repeat;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+}
+.exit__text{
+    position: absolute;
+    margin-left: 36.5px;
+    margin-top: 294px;
 }

@@ -8,6 +8,13 @@ class InTrip extends React.Component {
     }
   }
   componentDidMount(){
+    setTimeout(()=>{this.props.dispatch({
+      type:'navigator/save',
+      payload:{
+          confirmTripEndTriggered:true,
+          inTripTriggered:false
+      }
+    })}, 4000)
   }
   componentWillUnmount(){
   }
@@ -45,7 +52,7 @@ InTrip.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return this.state
+  return state
 }
 
 export default connect(mapStateToProps)(InTrip);

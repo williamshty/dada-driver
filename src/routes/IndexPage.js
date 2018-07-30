@@ -24,21 +24,68 @@ class IndexPage extends React.Component {
     render(){
       return (
         <div className={styles.normal}>
-          {/* {(()=>{
-            if(!this.props.navigator.orderGenerationTriggered)
+          {(()=>{
+            if(this.props.navigator.returnInitialStateTriggered){
             return (
               <div>
-              <div className={styles.button__bottom} onClick={()=>this.props.dispatch({type:'navigator/toggleOrderGeneration'})}>
+              <div className={styles.button__bottom} onClick={()=>
+                this.props.dispatch({type:'navigator/save',payload:{
+                  returnInitialStateTriggered:false,
+                  orderGenerationTriggered:true
+                }})}>
                <div className={styles.button__bottom__filler}></div>
               </div>
               <SideMenu/>
             </div>
-            )
-            else return <OrderGeneration/>
-          })()} */}
+            )}
+            else if(this.props.navigator.orderGenerationTriggered){
+              return <OrderGeneration/>
+            } 
+            else if(this.props.navigator.findingDriverTriggered){
+              return (
+                <div>
+                  <SideMenu/>
+                  <FindingDriver/>
+                </div>
+              )
+            }
+            else if(this.props.navigator.driverFoundTriggered){
+              return(
+                <div>
+                  <SideMenu/>
+                  <DriverFound/>
+                </div>
+              )
+            } 
+            else if(this.props.navigator.inTripTriggered){
+              return(
+                <div>
+                  <SideMenu/>
+                  <InTrip/>
+                </div>
+              )
+            }
+            else if(this.props.navigator.confirmTripEndTriggered){
+              return(
+                <div>
+                  <SideMenu/>
+                  <ConfirmTripEnd/>
+                </div>
+              )
+            }
+            else if(this.props.navigator.tripFinishedTriggered){
+              return(
+                <div>
+                  <SideMenu/>
+                  <TripFinished/>
+                </div>
+              )
+            }
+            
+          })()}
           {/* <SideMenu/> */}
           {/* <FindingDriver/> */}
-          <DriverFound/>
+          {/* <DriverFound/> */}
           {/* <InTrip/> */}
           {/* <TripFinished/> */}
           {/* <ConfirmTripEnd/> */}

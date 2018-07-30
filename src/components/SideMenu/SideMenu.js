@@ -5,16 +5,36 @@ import styles from './SideMenu.css'
 import loadPosition from '../../utils/locater'
 const sidebar = (
 <div className={styles.sidebar__background}>
-  <div className={styles.sidebar__background__filler}>
-  <div className={styles.sidebar__mask}>
-    <div className={styles.sidebar__background__filler}>
+      <div className={styles.phone__number}>138 4024 3280</div>
       <div className={styles.sidebar__menu}>
-        <div className={styles.sidebar__menu__filler}></div>
+        <div className={styles.driver__icon}></div>
+        <div className={styles.driver__text}>
+        成为搭搭车主
+        </div>
+        <div className={styles.history__icon}></div>
+        <div className={styles.history__text}>
+        历史订单
+        </div>
+        <div className={styles.wallet__icon}></div>
+        <div className={styles.wallet__text}>
+        我的钱包
+        </div>
+        <div className={styles.privacy__icon}></div>
+        <div className={styles.privacy__text}>
+        隐私与法律条款
+        </div>
+        <div className={styles.about__icon}></div>
+        <div className={styles.about__text}>
+        关于搭搭
+        </div>
+        <div className={styles.exit__icon}></div>
+        <div className={styles.exit__text}>
+        退出
+        </div>
       </div>
-    </div>
-  </div>
-  </div>
-</div>
+ </div>
+ 
+
 )
 
 class SideMenu extends React.Component {
@@ -31,7 +51,7 @@ class SideMenu extends React.Component {
     return (
       <div>
           <div className={this.state.buttonStyle}>
-          <img alt="avatar" width={38} onClick={()=>this.onOpenChange()} src={require('../../assets/avatar.png')}></img>
+          <img alt="avatar" width={38} onClick={()=>this.onOpenChange()} src={require('../../assets/side_bar.png')}></img>
           </div>
 
           {(()=>{

@@ -2,15 +2,15 @@
     position: absolute;
     z-index: 2000;
     width:100%;
-    height: 165.5px;
-    margin-top: 487.5px;
+    height: 175px;
+    margin-top: 478px;
     font-family: 'PingFang-SC-Medium';
     /* background-color: black; */
     font-weight: 400;
 }
 .bottom__car__card{
     width: 353px;
-    height: 165.5px;
+    height: 175px;
     margin-left: 11px;
     border-radius: 5px;
     background-color: #fff;
@@ -18,7 +18,7 @@
 }
 .bottom__card__title{
     margin-top: 21px;
-    margin-left: 152px;
+    margin-left: 142px;
     font-size: 14px;
     color: #666666;
     text-align: center;
@@ -29,7 +29,7 @@
     margin-left: 133px;
     width:16px;
     height: 16px;
-    background-color: #000;
+    background-color: #fff;
     color: #666666;
     text-align: center;
     position: absolute;
@@ -40,7 +40,9 @@
     width:26px;
     height: 26px;
     position: absolute;
-    background-color: #000;
+    /* background-color: #000; */
+    background: url('../../assets/call_driver.png') no-repeat;
+    background-size: contain;
 }
 .bottom__brand__title{
     position: absolute;
@@ -55,8 +57,8 @@
     margin-top: 96px;
     width: 32px;
     height: 32px;
-    border-radius: 16px;
-    background-color: #000;
+    background: url('../../assets/car_brand.png') no-repeat;
+    background-size: contain;
 }
 .bottom__color__title{
     position: absolute;
@@ -94,9 +96,9 @@
 .bottom__car__cancel{
     position: absolute;
     width: 353px;
-    margin-top: 132.5px;
+    margin-top: 145.5px;
     text-align: center;
-    color:#2774e8;
+    color:#e82727;
     text-decoration-line: underline;
     font-size: 11px;
 }

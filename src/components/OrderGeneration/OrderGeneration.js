@@ -25,7 +25,8 @@ class OrderGeneration extends React.Component {
         estimatedTime:0,
         estimatedPrice:0,
         routeShouldUpdate:true,
-        riderNumber:0
+        riderNumber:0,
+        paxSelected:0
     }
   }
   componentDidMount() {
@@ -96,12 +97,32 @@ class OrderGeneration extends React.Component {
       }
       else return styles.bottom__container__move__down
   }
+  loadSinglePaxStyle(){
+    if(this.state.paxSelected===1){
+        return styles.single__pax__activated
+    }
+    else return styles.single__pax
+  }
+  loadDoublePaxStyle(){
+    if(this.state.paxSelected===2){
+        return styles.double__pax__activated
+    }
+    else return styles.double__pax
+  }
 
   render(){
     return (
         <div>
         <div className={styles.top__container}>
-            <div className={styles.back__arrow} onClick={()=>this.props.dispatch({type:'navigator/toggleOrderGeneration'})}>
+            <div className={styles.back__arrow} onClick={()=>{
+                this.props.dispatch({
+                    type:'navigator/save',
+                    payload:{
+                        orderGenerationTriggered:false,
+                        returnInitialStateTriggered:true
+                    }
+                })
+            }}>
             <img width={12.5} src={require('../../assets/backArrow.png')}></img>
             </div>
             <div className={styles.search__container}>
@@ -206,29 +227,52 @@ class OrderGeneration extends React.Component {
                 if(this.state.routeShouldUpdate)this.loadEstimatedRoute.bind(this)()
                 return (
                     <div className={this.getBottomContainerClass()}>
-                    <div className={styles.bottom__tittle__container}>
+                    {/* <div className={styles.bottom__tittle__container}>
                     总路程{this.state.estimatedDistance}km，
                     预计耗时{this.state.estimatedTime}分钟
-                    </div>
+                    </div> */}
                     <div className={styles.bottom__rider__container}>
-                        <div className={styles.bottom__rider__number}>
-                            <div className={styles.circle__container}>
-                            {(()=>{
-                            })()}
-                            </div>
+                        <div className={styles.bottom__distance__text}>
+                        路程
                         </div>
-                        <div className={styles.bottom__rider__text}>
+                        <div className={styles.bottom__distance__number}>
+                        {this.state.estimatedDistance}&nbsp;
+                        <span className={styles.bottom__distance__unit}>Km</span>
+                        </div>
+                        <div className={styles.bottom__price__text}>
+                        费用
+                        </div>
+                        <div className={styles.bottom__price__number}>
+                        12.60&nbsp;
+                        <span className={styles.bottom__price__unit}>NAS</span>
+                        </div>
+                        <div className={styles.bottom__time__text}>
+                        时间
+                        </div>
+                        <div className={styles.bottom__time__number}>
+                        {this.state.estimatedTime}&nbsp;
+                        <span className={styles.bottom__time__unit}>Min</span>
+                        </div>
+                        <img className={styles.divider__title} src={require('../../assets/矩形 609.png')}/>
+                        <div className={styles.pax__title}>
                         选择乘车人数
                         </div>
-                        <div className={styles.bottom__rider__price}>
-                        <img className={styles.money__sign} src={require('../../assets/组 18.png')}/>
-                            <OrderPriceForm/>
+                        <div className={styles.single__pax__container} onClick={()=>{this.setState({paxSelected:1})}}>
+                            <div className={this.loadSinglePaxStyle()}></div>
                         </div>
-                        <div className={styles.price__warning}>
-                        *您的报价过低，可能影响您的匹配时间
+                        <div className={styles.double__pax__container} onClick={()=>{this.setState({paxSelected:2})}}>
+                            <div className={this.loadDoublePaxStyle()}></div>
                         </div>
                     </div>
-                    <div className={styles.bottom__rider__submit}>
+                    <div className={styles.bottom__rider__submit} onClick={()=>
+                        this.props.dispatch({
+                            type:'navigator/save',
+                            payload:{
+                                orderGenerationTriggered:false,
+                                findingDriverTriggered:true
+                            }
+                        })
+                        }>
                         发布订单
                     </div>
                 </div>

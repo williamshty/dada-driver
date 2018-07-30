@@ -19,7 +19,14 @@ class TripFinished extends React.Component {
       }
       if(this.state.starViewed&&!this.state.starRated){
         setTimeout(()=>this.setState({starRated:true}),1000)
-    }
+        setTimeout(()=>{this.props.dispatch({
+            type:'navigator/save',
+            payload:{
+                returnInitialStateTriggered:true,
+                tripFinishedTriggered:false
+            }
+          })}, 2000)
+      }
   }
   componentWillUnmount(){
   }

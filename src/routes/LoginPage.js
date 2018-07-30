@@ -126,19 +126,31 @@ class LoginPage extends React.Component {
             {(()=>{
               if(this.state.phoneError==='true'&&!this.state.phoneNotRegistered) {
                 return (
-                <div className={styles.error__text}>
-                手机号格式错误
+                <div>
+                  <div className={styles.error__icon}>
+                  </div>
+                  <div className={styles.error__text}>
+                    手机号格式错误
+                  </div>
                 </div>
               )}else if(this.state.phoneNotRegistered){
                 return (
-                <div className={styles.error__text}>
-                手机号尚未注册
+                <div>
+                  <div className={styles.error__icon}>
+                  </div>
+                  <div className={styles.error__text}>
+                  手机号尚未注册
+                  </div>
                 </div>
                 )
               }
               else if(this.state.verificationError==='true'){return (
+                <div>
+                `<div className={styles.error__icon}>
+                </div>
                 <div className={styles.error__text}>
                   验证码输入错误
+                </div>`
                 </div>
               )}
             })()}

@@ -119,10 +119,16 @@
   
   .error__text{
     position: absolute;
-    width: 100%;
-    text-align: center;
+    margin-left: 137.5px;
     margin-top: 330px;
     font-size: 14px;
     color: #f2112d;
-  
+  }
+  .error__icon{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin-top: 328.5px;
+    margin-left: 112.5px;
+    background-color: #f2112d;
   }

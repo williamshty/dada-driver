@@ -5,7 +5,13 @@ export default {
   
     state: {
         sideMenuOpen:false,
+        returnInitialStateTriggered:true,
         orderGenerationTriggered:false,
+        findingDriverTriggered:false,
+        driverFoundTriggered:true,
+        inTripTriggered:false,
+        confirmTripEndTriggered:false,
+        tripFinishedTriggered:false,
         priceFocusTriggered:0,
         isLoggedIn:false,
     },

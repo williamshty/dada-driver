@@ -12,6 +12,17 @@ class FindingDriver extends React.Component {
   componentDidMount(){
     this.interval = setInterval(()=>{this.countTime()},1000)
   }
+  componentDidUpdate(){
+    if(this.state.waitingTime>15&&this.props.navigator.findingDriverTriggered){
+        this.props.dispatch({
+            type:'navigator/save',
+            payload:{
+                driverFoundTriggered:true,
+                findingDriverTriggered:false
+            }
+        })
+    }
+  }
   componentWillUnmount(){
     clearInterval(this.interval)
   }
@@ -27,23 +38,10 @@ class FindingDriver extends React.Component {
         </div> */}
           <div className={styles.bottom__container}>
             <div className={styles.bottom__waiting__card}>
-                <div className={styles.bottom__waiting__icon}>
-                </div>
                 <div className={styles.bottom__waiting__tittle}>
                 等待司机接单
                 </div>
                 <img className={styles.divider__title} src={require('../../assets/矩形 609.png')}/>
-                {/* <div className={styles.bottom__waiting__time}>
-                您已等待
-                &nbsp;{Math.floor(this.state.waitingTime/60)}&nbsp;
-                分
-                &nbsp;{this.state.waitingTime-60*Math.floor(this.state.waitingTime/60)}&nbsp;
-                秒
-                </div>
-                <div className={styles.bottom__waiting__cancel}>
-                取消订单
-                </div>      */}
-                <img className={styles.loading__anim} src={require('./Rolling.svg')} alt="rolling"/>
                 <div className={styles.bottom__waiting__time}>
                 已等待
                 &nbsp;{this.state.waitingTime}&nbsp;
@@ -68,7 +66,7 @@ FindingDriver.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return this.state
+  return state
 }
 
 export default connect(mapStateToProps)(FindingDriver);

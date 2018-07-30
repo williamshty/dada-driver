@@ -36,7 +36,15 @@ class ConfirmTripEnd extends React.Component {
                 未完成,联系客服
                 </div>
             </div>
-            <div className={styles.bottom__submit__button}>
+            <div className={styles.bottom__submit__button} onClick={()=>{
+              this.props.dispatch({
+                type:'navigator/save',
+                payload:{
+                    confirmTripEndTriggered:false,
+                    tripFinishedTriggered:true
+                }
+              })
+            }}>
             确认行程完成
             </div>
           </div>
@@ -51,7 +59,7 @@ ConfirmTripEnd.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return this.state
+  return state
 }
 
 export default connect(mapStateToProps)(ConfirmTripEnd);

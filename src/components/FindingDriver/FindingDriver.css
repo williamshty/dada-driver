@@ -2,8 +2,8 @@
     position: absolute;
     z-index: 2000;
     width:100%;
-    margin-top:489px;
-    height: 164.5px;
+    margin-top:497.5px;
+    height: 156.5px;
     font-family: 'PingFang-SC-Medium';
     /* font-weight: 100; */
 }
@@ -11,15 +11,15 @@
     position: absolute;
     z-index: 1;
     width:100%;
-    margin-top:489px;
-    height: 164.5px;
+    margin-top:497.5px;
+    height: 156.5px;
     background-color: rgba(238, 238, 238,0.8);
     filter: blur(2px);    
     /* font-weight: 100; */
 }
 .bottom__waiting__card{
     width: 353px;
-    height: 164.5px;
+    height: 156.5px;
     margin-left: 11px;
     border-radius: 5px;
     background-color: #fff;
@@ -27,7 +27,7 @@
 }
 .bottom__waiting__tittle{
     margin-top: 21px;
-    margin-left: 145px;
+    width: 353px;
     text-align: center;
     color:#666666;
     font-size: 14px;
@@ -47,7 +47,7 @@
     color:#333333;
     font-size: 14px;
     position: absolute;
-    margin-top: 113.5px;
+    margin-top: 95.5px;
     width: 353px;
     text-align: center;
     font-weight: 500;
@@ -55,7 +55,7 @@
 .bottom__waiting__cancel{
     position: absolute;
     width: 353px;
-    margin-top: 131.5px;
+    margin-top: 126.5px;
     text-align: center;
     color:#2774e8;
     text-decoration-line: underline;
