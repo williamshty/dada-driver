@@ -25,7 +25,12 @@ class MapComponent extends React.Component {
   }
   render(){
     return (
-      <Map style={{height: '100%'}} center={this.state.currentLocation} zoom="12">
+      <Map 
+      style={{height: '100%'}} 
+      center={this.state.currentLocation} 
+      zoom="12"
+      mapStyle={{styleJson: []}}>
+      {/* add json format style in above [] */}
        {(()=>{
          if(this.props.mapData.trafficActivated) return(<TrafficLayer/>)    
        })()}

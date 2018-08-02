@@ -86,7 +86,7 @@
   width: 140.5px;
   height: 41px;
   background-size: 140.5px 41px;
-  background-image: url('../assets/dada_logo.png');
+  background-image: url('../../assets/dada_logo.png');
 }
 .verification__button{
   position: absolute;

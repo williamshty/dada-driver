@@ -5,40 +5,49 @@
     background-color: #f2f2f2;
     /* background-color: #000; */
 }
+
+.back__button{
+    position: absolute;
+    margin-left: 18px;
+    margin-top: 32px;
+    width: 8px;
+    height: 15px;
+    background: url('../../assets/backArrow.png');
+    background-size: contain;
+
+    /* background-color: #000; */
+}
+
 .login__text{
     /* background-color: red; */
     position: absolute;
-    margin-left: 72px;
-    margin-top: 75px;
-    width: 120px;
-    height: 30px;
-    line-height: 30px;
-    vertical-align: bottom;
-    color:#333
+    margin-left: 72.5px;
+    margin-top: 81.5px;
+    color:#333;
+    font-size: 24px;
+    font-weight: 600;
+}
+.login__hint__text{
+    margin-left: 29.5px;
+    margin-top: 120px;
+    font-size: 13px;
+    color:#666666;
+    position: absolute;
 }
 
 .login__icon{
     position: absolute;
-    margin-left: 29px;
-    margin-top: 77.5px;
-    width: 24px;
-    height: 24px;
+    margin-left: 27.5px;
+    margin-top: 79px;
+    width: 31px;
+    height: 31px;
     background-color: #000;
-}
-
-.login__character{
-    font-size: 32px;
-    font-weight: 600;
-}
-.login__letter{
-    font-size: 14px;
-    font-weight: 400;
 }
 .tel__container{
     /* background-color: red; */
     position: absolute;
     margin-left: 11px;
-    margin-top: 198px;
+    margin-top: 264px;
     width: 353px;
     height: 55px;
     border-radius: 27.5px;
@@ -56,9 +65,9 @@
     position: absolute;
     height: 44px;
     width: 353px;
-    margin-top:366px;
+    margin-top:375px;
     margin-left:11px;
-    background-image: linear-gradient(to right, #1e5799 0%,#2774e8 0%,#2283e2 70%,#1c91dc 100%);
+    background-image: linear-gradient(to right, #ffbc3b 0,#ffa632 100%);
     border-radius: 5px;
     padding-top:13.5px;
     box-sizing: border-box;
@@ -86,20 +95,20 @@
     width: 140.5px;
     height: 41px;
     background-size: 140.5px 41px;
-    background-image: url('../assets/dada_logo.png');
+    background-image: url('../../assets/dada_logo.png');
 }
 .verification__button{
     position: absolute;
-    margin-left: 254px;
-    margin-top: 272.5px;
-    width: 99px;
+    margin-left: 274.5px;
+    margin-top: 284.5px;
+    /* width: 99px;
     height: 38px;
     border-radius: 19px;
-    padding-top: 11px;
+    padding-top: 11px; */
     text-align: center;
     font-size: 14px;
-    color: #2774e8;
-    border:1px solid #2774e8;
+    color: #ffa833;
+    /* border:1px solid #2774e8; */
     box-sizing: border-box;
 }
 .verification__sent{

@@ -2,14 +2,14 @@ import React from 'react';
 import { connect } from 'dva';
 import styles from './IndexPage.css';
 import {routerRedux} from 'dva/router';
-import MapComponent from '../components/MapComponent';
-import SideMenu from '../components/SideMenu/SideMenu';
-import OrderGeneration from '../components/OrderGeneration/OrderGeneration'
-import FindingDriver from '../components/FindingDriver/FindingDriver'
-import DriverFound from '../components/DriverFound/DriverFound'
-import InTrip from '../components/InTrip/InTrip'
-import TripFinished from '../components/TripFinished/TripFinished'
-import ConfirmTripEnd from '../components/ConfirmTripEnd/ConfirmTripEnd'
+import MapComponent from '../../components/MapComponent';
+import SideMenu from '../../components/SideMenu/SideMenu';
+import OrderGeneration from '../../components/OrderGeneration/OrderGeneration'
+import FindingDriver from '../../components/FindingDriver/FindingDriver'
+import DriverFound from '../../components/DriverFound/DriverFound'
+import InTrip from '../../components/InTrip/InTrip'
+import TripFinished from '../../components/TripFinished/TripFinished'
+import ConfirmTripEnd from '../../components/ConfirmTripEnd/ConfirmTripEnd'
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);

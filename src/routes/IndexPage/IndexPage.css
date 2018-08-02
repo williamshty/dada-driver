@@ -26,7 +26,7 @@
   margin-left: 155px;
   margin-top:589px;
   z-index: 1;
-  background: url('../assets/X311Y1178.png') no-repeat top;
+  background: url('../../assets/X311Y1178.png') no-repeat top;
   background-size: 100%;
 }
 .button__bottom:active{
@@ -34,7 +34,7 @@
   margin-left: 155px;
   margin-top:589px;
   z-index: 1;
-  background: url('../assets/X311Y1178 X.png') no-repeat top;
+  background: url('../../assets/X311Y1178 X.png') no-repeat top;
   background-size: 100%;
 }
 
