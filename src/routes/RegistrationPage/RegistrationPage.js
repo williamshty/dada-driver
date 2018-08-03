@@ -80,13 +80,15 @@ class RegistrationPage extends React.Component {
     render(){
       return (
         <div className={styles.base__container}>
+            <div className={styles.back__button}></div>
             <div className={styles.registration__icon}></div>
             <div className={styles.registration__text}>
-                <span className={styles.registration__character}>注册</span>
-                &nbsp;&nbsp;
-                <span className={styles.registration__letter}>REGISTER</span>
+            注册
             </div>
-            <div className={styles.tel__container}>
+            <div className={styles.registration__hint__text}>
+            检测到您的手机号没有注册，请填写验证码以注册
+            </div>
+            {/* <div className={styles.tel__container}>
                 <InputItem
                 caption='手机号'
                 placeholder=''
@@ -94,7 +96,7 @@ class RegistrationPage extends React.Component {
                 onChange={(v)=>{this.setState({tel:v})}}
                 error={this.state.phoneError}
                 />
-            </div>
+            </div> */}
             <div className={styles.verification__container}>
                 <InputItem
                 error={this.state.verificationError}
@@ -133,13 +135,13 @@ class RegistrationPage extends React.Component {
             })()}
             
             <div className={styles.submit__botton} onClick={()=>this.submitRegistrationForm()}>
-            提交
+            注册
             </div>
-            <div className={styles.login__text} onClick={()=>{
+            {/* <div className={styles.login__text} onClick={()=>{
               this.props.dispatch(routerRedux.push({pathname:'/login'}))
               }}>
             返回登录
-            </div>
+            </div> */}
             <div className={styles.logo__container}>
             </div>
        </div>

@@ -6,6 +6,7 @@ import {SearchBar, List} from 'antd-mobile';
 import styles from './OrderGeneration.css';
 import {searchLocationByCoordinate,searchLocation,getEstimatedRoute} from '../../utils/baiduQuery'
 import OrderPriceForm from '../Forms/OrderPriceForm'
+import SearchItem from '../Forms/SearchItem'
 // import pile from 'pile-ui'
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -123,26 +124,45 @@ class OrderGeneration extends React.Component {
                     }
                 })
             }}>
-            <img width={12.5} src={require('../../assets/backArrow.png')}></img>
+            <img width={8} src={require('../../assets/backArrow.png')}></img>
             </div>
-            <div className={styles.search__container}>
-                <SearchBar
+            <div className={styles.start__search__container}>
+                {/* <SearchBar
                 placeholder="起点"
                 maxLength={8}
                 showCancelButton
                 onChange={this.onStartChange}
                 onSubmit={(value)=>{this.onSubmitStart(value)}}
                 value={this.state.start}
-                cancelText=" "/>
-                <SearchBar
+                cancelText=" "/> */}
+                <SearchItem
+                 placeholder='牛市口'
+                 iconColor='#1ad371'
+                 value={this.state.start}
+                 onChange={this.onStartChange}
+                 onKeyPress={(e)=>{if(e.key==='Enter'){
+                     this.onSubmitStart(this.state.start)
+                 }}}/>
+            </div>
+            <div className={styles.end__search__container}>
+                 <SearchItem
+                 placeholder='尼比鲁'
+                 iconColor='#ff0000'
+                 value={this.state.end}
+                 onChange={this.onEndChange}
+                 onKeyPress={(e)=>{if(e.key==='Enter'){
+                     this.onSubmitEnd(this.state.end)
+                 }}}/>
+                {/* <SearchBar
                 placeholder="终点"
                 maxLength={8}
                 showCancelButton
                 onChange={this.onEndChange}
                 onSubmit={(value)=>{this.onSubmitEnd(value)}}
                 value={this.state.end}
-                cancelText=" "/>
+                cancelText=" "/> */}
             </div>
+            <div className={styles.top__info__container}></div>
             {(()=>{
             if(this.state.startLocationActivated){
                 return (

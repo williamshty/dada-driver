@@ -4,6 +4,7 @@ import styles from './LoginPage.css';
 import InputItem from '../../components/Forms/InputItem'
 import {routerRedux} from 'dva/router';
 import {getLoginVerificationCode} from '../../utils/webServices'
+import SearchItem from '../../components/Forms/SearchItem'
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
@@ -84,66 +85,75 @@ class LoginPage extends React.Component {
   componentDidMount(){
     // console.log(this.props)
   }
-    render(){
-      return (
-        <div className={styles.base__container}>
-            <div className={styles.back__button}></div>
-            <div className={styles.login__icon}></div>
-            <div className={styles.login__text}>
-              验证登录
-            </div>
-            <div className={styles.login__hint__text}>
-            为确保该手机为本人登陆，请输入验证码
-            </div>
-            {/* <div className={styles.tel__container}>
-                <InputItem
-                error={this.state.phoneError}
-                caption='手机号'
-                placeholder=''
-                value={this.state.tel}
-                onChange={(v)=>{this.setState({tel:v})}}/>
-            </div> */}
-            <div className={styles.verification__container}>
-                <InputItem
-                error={this.state.verificationError}
-                caption='验证码'
-                placeholder=''
-                value={this.state.verificationEntered}
-                onChange={(v)=>{this.setState({enteredVerification:v})}}/>
-            </div>
+    // render(){
+    //   return (
+    //     <div className={styles.base__container}>
+    //     <div className={styles.status__bar__filler}></div>
+    //         <div className={styles.back__button}></div>
+    //         <div className={styles.login__icon}></div>
+    //         <div className={styles.login__text}>
+    //           验证登录
+    //         </div>
+    //         <div className={styles.login__hint__text}>
+    //         为确保该手机为本人登陆，请输入验证码
+    //         </div>
+    //         {/* <div className={styles.tel__container}>
+    //             <InputItem
+    //             error={this.state.phoneError}
+    //             caption='手机号'
+    //             placeholder=''
+    //             value={this.state.tel}
+    //             onChange={(v)=>{this.setState({tel:v})}}/>
+    //         </div> */}
+    //         <div className={styles.verification__container}>
+    //             <InputItem
+    //             error={this.state.verificationError}
+    //             caption='验证码'
+    //             placeholder=''
+    //             value={this.state.verificationEntered}
+    //             onChange={(v)=>{this.setState({enteredVerification:v})}}/>
+    //         </div>
 
-            {(()=>{
-              if(!this.state.verificationSent){return(
-                <div className={styles.verification__button} 
-                onClick={this.loadLoginVerificationCode.bind(this)}>
-                  发送验证码
-                </div>
-              )}
-              else return(
-                <div className={styles.verification__sent}>
-                  {this.state.countDownTime}s
-                </div>
-              )
-            })()}
-            {(()=>{
-            if(this.state.verificationError==='true'){return (
-                <div>
-                <div className={styles.error__icon}>
-                </div>
-                <div className={styles.error__text}>
-                  验证码输入错误
-                </div>`
-                </div>
-              )}
-            })()}
+    //         {(()=>{
+    //           if(!this.state.verificationSent){return(
+    //             <div className={styles.verification__button} 
+    //             onClick={this.loadLoginVerificationCode.bind(this)}>
+    //               发送验证码
+    //             </div>
+    //           )}
+    //           else return(
+    //             <div className={styles.verification__sent}>
+    //               {this.state.countDownTime}s
+    //             </div>
+    //           )
+    //         })()}
+    //         {(()=>{
+    //         if(this.state.verificationError==='true'){return (
+    //             <div>
+    //             <div className={styles.error__icon}>
+    //             </div>
+    //             <div className={styles.error__text}>
+    //               验证码输入错误
+    //             </div>`
+    //             </div>
+    //           )}
+    //         })()}
 
-            <div className={styles.submit__botton} onClick={()=>this.submitLoginForm()}>
-           登录
-            </div>
-            <div className={styles.logo__container}>
-            </div>
-       </div>
+    //         <div className={styles.submit__botton} onClick={()=>this.submitLoginForm()}>
+    //        登录
+    //         </div>
+    //         <div className={styles.logo__container}>
+    //         </div>
+    //    </div>
         
+    //   )
+    // }
+    render(){
+      return(
+        <SearchItem
+        placeholder='牛市口'
+        iconColor='#1ad371'
+        onKeyPress={(e)=>{console.log(e.key)}}/>
       )
     }
 }

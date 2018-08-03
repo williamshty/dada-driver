@@ -11,6 +11,7 @@ function RouterConfig({ history }) {
         <Route path="/" exact component={IndexPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/register" component={RegistrationPage} />
+        <Route path="/verification" component={PhoneVerificationPage} />
       </Switch>
     </Router>
   );

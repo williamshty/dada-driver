@@ -4,25 +4,44 @@
   position: absolute;
   background-color: #f2f2f2;
 }
+.back__button{
+  position: absolute;
+  margin-left: 18px;
+  margin-top: 32px;
+  width: 8px;
+  height: 15px;
+  background: url('../../assets/backArrow.png');
+  background-size: contain;
+
+  /* background-color: #000; */
+}
 .registration__text{
   /* background-color: red; */
   position: absolute;
   margin-left: 72.5px;
-  margin-top: 75px;
-  width: 150px;
-  height: 30px;
-  line-height: 30px;
-  vertical-align: bottom;
-  color:#333
+  margin-top: 81.5px;
+  color:#333;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .registration__icon{
   position: absolute;
-  margin-left: 29px;
-  margin-top: 77.5px;
-  width: 24px;
-  height: 24px;
-  background-color: #000;
+    margin-left: 27.5px;
+    margin-top: 79px;
+    width: 31px;
+    height: 31px;
+    /* background-color: #000; */
+    background: url('../../assets/registration.png') no-repeat;
+    background-size: contain;
+}
+
+.registration__hint__text{
+  margin-left: 29.5px;
+    margin-top: 120px;
+    font-size: 13px;
+    color:#666666;
+    position: absolute;
 }
 
 .registration__character{
@@ -53,19 +72,18 @@
 }
 .submit__botton{
   position: absolute;
-  cursor: pointer;
   height: 44px;
-  width: 353px;
-  margin-top:366px;
-  margin-left:11px;
-  background-image: linear-gradient(to right, #1e5799 0%,#2774e8 0%,#2283e2 70%,#1c91dc 100%);
-  border-radius: 5px;
-  padding-top:13.5px;
-  box-sizing: border-box;
-  color:#fff;
-  font-size: 18px;
-  text-align: center;
-  font-weight: 100 !important; 
+    width: 353px;
+    margin-top:375px;
+    margin-left:11px;
+    background-image: linear-gradient(to right, #ffbc3b 0,#ffa632 100%);
+    border-radius: 5px;
+    padding-top:13.5px;
+    box-sizing: border-box;
+    color:#fff;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 100 !important;   
 }
 .login__text{
   /* background-color: red; */
@@ -90,18 +108,17 @@
 }
 .verification__button{
   position: absolute;
-  margin-left: 254px;
-  margin-top: 272.5px;
-  width: 99px;
-  height: 38px;
-  border-radius: 19px;
-  padding-top: 11px;
-  text-align: center;
-  font-size: 14px;
-  color: #2774e8;
-  border:1px solid #2774e8;
-  box-sizing: border-box;
-  cursor: pointer;
+    margin-left: 274.5px;
+    margin-top: 284.5px;
+    /* width: 99px;
+    height: 38px;
+    border-radius: 19px;
+    padding-top: 11px; */
+    text-align: center;
+    font-size: 14px;
+    color: #ffa833;
+    /* border:1px solid #2774e8; */
+    box-sizing: border-box;
 }
 
 .verification__sent{
