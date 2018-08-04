@@ -9,10 +9,10 @@ const app = dva({
     initialState:{
         navigator:{
             sideMenuOpen:false,
-            returnInitialStateTriggered:true,
+            returnInitialStateTriggered:false,
             orderGenerationTriggered:false,
             findingDriverTriggered:false,
-            driverFoundTriggered:false,
+            driverFoundTriggered:true,
             inTripTriggered:false,
             confirmTripEndTriggered:false,
             tripFinishedTriggered:false,

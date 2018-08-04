@@ -63,6 +63,7 @@
     border-width: 0;
     box-sizing: border-box;
     background-color: #ffffff;
+    width: 200px;
     font-size: 13px;
 }
 .search__divider{

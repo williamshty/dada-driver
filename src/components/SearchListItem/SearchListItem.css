@@ -1,0 +1,79 @@
+.list__item{
+    /* position: absolute; */
+    z-index:2000;
+    width: 339.5px;
+    height: 58px;
+    background-color: #fff;
+    font-family: 'PingFang-SC-Medium';
+}
+.list__divider{
+    position: absolute;
+    height: 1px;
+    width: 317.5px;
+    margin-top: 57px;
+    margin-left: 11px;
+}
+.list__title{
+    position: absolute;
+    margin-left: 42.5px;
+    margin-top: 14.5px;
+    font-size: 14px;
+    color: #333333;
+
+}
+.list__detail__container{
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    margin-left: 43px;
+    margin-top: 32.5px;
+    width: 240px;
+}
+.list__detail{
+    font-size: 11px;
+    color: #999999;
+    text-overflow:ellipsis;
+}
+.list__icon__home{
+    position: absolute;
+    height: 18px;
+    width:18px;
+    margin-top: 12.5px;
+    margin-left: 15.5px;
+    background-image: url(.././../assets/list_icon_home.png);
+    background-size: contain;
+}
+.list__item__small{
+    z-index:2000;
+    width: 339.5px;
+    height: 46.5px;
+    background-color: #fff;
+    font-family: 'PingFang-SC-Medium'
+}
+.list__divider__small{
+    position: absolute;
+    height: 1px;
+    width: 317.5px;
+    margin-top: 45.5px;
+    margin-left: 11px;
+}
+.list__icon__locate{
+    position: absolute;
+    height: 18px;
+    width:18px;
+    margin-top: 12.5px;
+    margin-left: 15.5px;
+    background-color: red;
+    /* background-image: url(.././../assets/list_icon_home.png);
+    background-size: contain; */
+}
+.list__icon__current{
+    position: absolute;
+    height: 18px;
+    width:18px;
+    margin-top: 12.5px;
+    margin-left: 15.5px;
+    background-color: green;
+    /* background-image: url(.././../assets/list_icon_home.png);
+    background-size: contain; */
+}

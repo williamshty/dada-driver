@@ -5,6 +5,7 @@ import InputItem from '../../components/Forms/InputItem'
 import {routerRedux} from 'dva/router';
 import {getLoginVerificationCode} from '../../utils/webServices'
 import SearchItem from '../../components/Forms/SearchItem'
+import SearchListItem from '../../components/SearchListItem/SearchListItem'
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
@@ -150,10 +151,13 @@ class LoginPage extends React.Component {
     // }
     render(){
       return(
-        <SearchItem
-        placeholder='牛市口'
-        iconColor='#1ad371'
-        onKeyPress={(e)=>{console.log(e.key)}}/>
+        // <SearchItem
+        // placeholder='牛市口'
+        // iconColor='#1ad371'
+        // onKeyPress={(e)=>{console.log(e.key)}}/>
+       <div>
+        
+       </div>
       )
     }
 }

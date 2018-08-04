@@ -35,23 +35,23 @@ class MapComponent extends React.Component {
          if(this.props.mapData.trafficActivated) return(<TrafficLayer/>)    
        })()}
        <Marker position={this.state.currentLocation}/>
-       {(()=>{
+       {/* {(()=>{
         if(this.props.navigator.orderGenerationTriggered && this.props.mapData.startLocation) return(
           <Marker position={this.props.mapData.startLocation}/>
         )
-        })()}
-        {(()=>{
+        })()} */}
+        {/* {(()=>{
         if(this.props.navigator.orderGenerationTriggered && this.props.mapData.endLocation) return(
           <Marker position={this.props.mapData.endLocation}/>
         )
-        })()}
-        {(()=>{
+        })()} */}
+        {/* {(()=>{
         if(this.props.navigator.orderGenerationTriggered&&this.props.mapData.endLocation && this.props.mapData.startLocation) return(
           <DrivingRoute 
           start={this.props.mapData.startLocation} 
           end={this.props.mapData.endLocation}/>  
         )
-        })()}
+        })()} */}
       </Map>
       );
   }

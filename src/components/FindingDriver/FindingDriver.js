@@ -12,17 +12,17 @@ class FindingDriver extends React.Component {
   componentDidMount(){
     this.interval = setInterval(()=>{this.countTime()},1000)
   }
-  componentDidUpdate(){
-    if(this.state.waitingTime>15&&this.props.navigator.findingDriverTriggered){
-        this.props.dispatch({
-            type:'navigator/save',
-            payload:{
-                driverFoundTriggered:true,
-                findingDriverTriggered:false
-            }
-        })
-    }
-  }
+  // componentDidUpdate(){
+  //   if(this.state.waitingTime>15&&this.props.navigator.findingDriverTriggered){
+  //       this.props.dispatch({
+  //           type:'navigator/save',
+  //           payload:{
+  //               driverFoundTriggered:true,
+  //               findingDriverTriggered:false
+  //           }
+  //       })
+  //   }
+  // }
   componentWillUnmount(){
     clearInterval(this.interval)
   }

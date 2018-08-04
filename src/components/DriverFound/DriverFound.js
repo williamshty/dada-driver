@@ -7,24 +7,27 @@ class DriverFound extends React.Component {
     this.state = {
     }
   }
-  componentDidMount(){
-    setTimeout(()=>{this.props.dispatch({
-      type:'navigator/save',
-      payload:{
-          driverFoundTriggered:false,
-          inTripTriggered:true
-      }
-    })}, 4000)
-  }
+  // componentDidMount(){
+  //   setTimeout(()=>{this.props.dispatch({
+  //     type:'navigator/save',
+  //     payload:{
+  //         driverFoundTriggered:false,
+  //         inTripTriggered:true
+  //     }
+  //   })}, 4000)
+  // }
   
   render(){
     return (
       <div className={styles.bottom__container}>
       <div className={styles.bottom__car__card}>
-        <div className={styles.bottom__card__title__icon}>
-        </div>
+        {/* <div className={styles.bottom__card__title__icon}>
+        </div> */}
         <div className={styles.bottom__card__title}>
         司机已接单
+        </div>
+        <div className={styles.bottom__card__info}>
+        司机正前往您的位置，请稍候
         </div>
         <img className={styles.divider__title} src={require('../../assets/矩形 609.png')}/>
         <div className={styles.bottom__card__corner__icon}>
@@ -33,6 +36,7 @@ class DriverFound extends React.Component {
         车辆品牌
         </div>
         <div className={styles.bottom__brand}>
+        大众
         </div>
         <div className={styles.bottom__color__title}>
         车辆颜色
@@ -46,9 +50,9 @@ class DriverFound extends React.Component {
         <div className={styles.bottom__license}>
         川A · 5CW77
         </div>
-        <div className={styles.bottom__car__cancel}>
+        {/* <div className={styles.bottom__car__cancel}>
         取消订单
-        </div>
+        </div> */}
       </div>
       </div>
     );
