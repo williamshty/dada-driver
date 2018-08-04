@@ -19,13 +19,13 @@ class TripFinished extends React.Component {
       }
       if(this.state.starViewed&&!this.state.starRated){
         setTimeout(()=>this.setState({starRated:true}),1000)
-        setTimeout(()=>{this.props.dispatch({
-            type:'navigator/save',
-            payload:{
-                returnInitialStateTriggered:true,
-                tripFinishedTriggered:false
-            }
-          })}, 2000)
+        // setTimeout(()=>{this.props.dispatch({
+        //     type:'navigator/save',
+        //     payload:{
+        //         returnInitialStateTriggered:true,
+        //         tripFinishedTriggered:false
+        //     }
+        //   })}, 2000)
       }
   }
   componentWillUnmount(){
@@ -61,8 +61,13 @@ class TripFinished extends React.Component {
                     </div>
                     )
                 } else return(
-                    <div className={styles.thank__message}>
+                    
+                    <div>
+                        <div className={styles.thank__message}>
                         感谢您的评价
+                        </div>
+                        <div className={styles.thank__icon}>
+                        </div>
                     </div>
                 )
             })()}

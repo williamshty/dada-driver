@@ -12,10 +12,10 @@ const app = dva({
             returnInitialStateTriggered:false,
             orderGenerationTriggered:false,
             findingDriverTriggered:false,
-            driverFoundTriggered:true,
+            driverFoundTriggered:false,
             inTripTriggered:false,
             confirmTripEndTriggered:false,
-            tripFinishedTriggered:false,
+            tripFinishedTriggered:true,
             priceFocusTriggered:0,
             isLoggedIn:false
         },

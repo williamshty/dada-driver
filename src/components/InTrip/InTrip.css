@@ -2,58 +2,92 @@
     position: absolute;
     z-index: 2000;
     width:100%;
-    margin-top:540px;
-    height: 113px;
+    height: 160px;
+    /* margin-top: 478px; */
     font-family: 'PingFang-SC-Medium';
-    /* background-color: #000; */
+    /* background-color: black; */
+    font-weight: 400;
 }
 .bottom__trip__card{
-    width: 353px;
-    height: 113px;
-    margin-left: 11px;
-    border-radius: 5px;
+    width: 100%;
+    height: 160px;
+    /* margin-left: 11px; */
+    /* border-radius: 5px; */
     background-color: #fff;
     box-sizing: border-box;
 }
 .bottom__trip__title{
-    padding-top: 18px;
-    text-align: center;
-    color:#666666;
+    position: absolute;
+    margin-top: 31px;
+    margin-left: 46px;
     font-size: 18px;
-    font-weight: 550;
-    /* position: absolute; */
+    color: #333333;
+}
+.bottom__trip__info{
+    position: absolute;
+    margin-left: 44.5px;
+    margin-top: 59px;
+    color: #333333;
+    font-size: 12px;
+}
+.bottom__card__corner__icon{
+    margin-top: 34.5px;
+    margin-left: 298.5px;
+    width:32.5px;
+    height: 32.5px;
+    position: absolute;
+    background-color: #000;
+    /* background: url('../../assets/call_driver.png') no-repeat;
+    background-size: contain; */
 }
 .bottom__distance__title{
     position: absolute;
-    margin-left: 54.5px;
-    margin-top: 23px;
-    font-size: 14px;
+    transform: translate(-50%,50%);
+    top:-5.5px;
+    margin-left: 109.5px;
+    margin-top: 105px;
+    font-size: 11px;
     color:#666;
+    font-weight: 200;
 }
 .bottom__time__title{
     position: absolute;
-    margin-left: 223.5px;
-    margin-top: 23px;
-    font-size: 14px;
+    transform: translate(-50%,50%);
+    top:-5.5px;
+    margin-left: 265.5px;
+    margin-top: 105px;
+    font-size: 11px;
     color:#666;
+    font-weight: 200;
 }
 .bottom__distance{
     position: absolute;
-    margin-left: 54.5px;
-    margin-top: 42px;
-    font-size: 18px;
-    color:#333;
+    transform: translate(-50%,50%);
+    top:-4.25px;
+    margin-left: 109.5px;
+    margin-top: 126px;
+    font-size: 12px;
+    color:#666;
     font-weight: 600;
-    width: 70px;
-    text-align: center;
 }
 .bottom__time{
     position: absolute;
-    margin-left: 223.5px;
-    margin-top: 42px;
-    font-size: 18px;
-    color:#333;
+    transform: translate(-50%,50%);
+    top:-4.25px;
+    margin-left: 265.5px;
+    margin-top: 126px;
+    font-size: 12px;
+    color:#666;
     font-weight: 600;
-    width: 84px;
-    text-align: center;
 }
+
+.divider__title{
+    width:331px;
+    height: 1px;
+    margin-left: 22px;
+    margin-right: 11px;
+    margin-top: 86.5px;
+    /* padding: 0; */
+    position: absolute;
+    /* margin-top:11.5px;  */
+  }

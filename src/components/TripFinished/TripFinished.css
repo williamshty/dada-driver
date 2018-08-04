@@ -68,9 +68,20 @@
 }
 
 .thank__message{
-    padding-top: 44px;
-    margin-left: 129px;
+    position: absolute;
+    margin-top: 22.5px;
+    margin-left: 135px;
     font-size: 16px;
     color: #333333;
     font-weight: 550;
+}
+.thank__icon{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    margin-left: 160.5px;
+    margin-top: 49px;
+    background-color: #000;
+    /* background-image: url();
+    background-size: contain; */
 }

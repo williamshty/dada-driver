@@ -8,13 +8,13 @@ class InTrip extends React.Component {
     }
   }
   componentDidMount(){
-    setTimeout(()=>{this.props.dispatch({
-      type:'navigator/save',
-      payload:{
-          confirmTripEndTriggered:true,
-          inTripTriggered:false
-      }
-    })}, 4000)
+    // setTimeout(()=>{this.props.dispatch({
+    //   type:'navigator/save',
+    //   payload:{
+    //       confirmTripEndTriggered:true,
+    //       inTripTriggered:false
+    //   }
+    // })}, 4000)
   }
   componentWillUnmount(){
   }
@@ -24,9 +24,14 @@ class InTrip extends React.Component {
       <div>
           <div className={styles.bottom__container}>
             <div className={styles.bottom__trip__card}>
+                <div className={styles.bottom__card__corner__icon}></div>
                 <div className={styles.bottom__trip__title}>
                 行程中
                 </div>
+                <div className={styles.bottom__trip__info}>
+                司机正前往您的位置，请稍候
+                </div>
+                <img className={styles.divider__title} src={require('../../assets/矩形 609.png')}/>
                 <div className={styles.bottom__distance__title}>
                 目的地距离
                 </div>
