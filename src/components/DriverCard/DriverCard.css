@@ -1,0 +1,96 @@
+.driver__card{
+    position: absolute;
+    width: 353.5px;
+    height: 171px;
+    background-color: #ffffff;
+    color: #333333;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    /* margin-top: 11px; */
+}
+.divider__title{
+    width:331px;
+    height: 1px;
+    margin-left: 11.5px;
+    margin-top: 79.5px;
+    position: absolute;
+}
+
+.card__title{
+    color: #ff9633;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    margin-top: 17.5px;
+    font-family: 'PingFang-SC-Bold';
+    font-weight: 600;
+    position: absolute;
+}
+.card__balance{
+    color: #333333;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    margin-top: 45.5px;
+    font-family: 'PingFang-SC-Medium';
+    /* font-weight: 600; */
+    position: absolute;
+}
+.card__balance__unit{
+    font-size: 14px;
+    /* position: absolute; */
+}
+.trip__title{
+    color: #333333;
+    position: absolute;
+    font-size: 11px;
+    margin-top: 100px;
+    margin-left: 65.75px;
+    top: -8.5px;
+    transform: translate(-50%,50%)
+}
+.trip__number{
+    color: #333333;
+    position: absolute;
+    font-size: 11px;
+    margin-top: 121px;
+    margin-left: 65.75px;
+    top: -8.5px;
+    transform: translate(-50%,50%)
+}
+.time__title{
+    color: #333333;
+    position: absolute;
+    font-size: 11px;
+    margin-top: 100px;
+    margin-left: 177.25px;
+    top: -8.5px;
+    transform: translate(-50%,50%)
+}
+.time__number{
+    color: #333333;
+    position: absolute;
+    font-size: 11px;
+    margin-top: 121px;
+    margin-left: 177.25px;
+    top: -8.5px;
+    transform: translate(-50%,50%)
+}
+.rating__title{
+    color: #333333;
+    position: absolute;
+    font-size: 11px;
+    margin-top: 100px;
+    margin-left: 288.25px;
+    top: -8.5px;
+    transform: translate(-50%,50%)
+}
+.rating__number{
+    color: #333333;
+    position: absolute;
+    font-size: 11px;
+    margin-top: 121px;
+    margin-left: 288.25px;
+    top: -8.5px;
+    transform: translate(-50%,50%)
+}

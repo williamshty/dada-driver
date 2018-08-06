@@ -21,6 +21,12 @@ const app = dva({
         },
         mapData:{
             currentLocation:currentLocation
+        },
+        trip:{
+            start:'',
+            end: '',
+            length:'',
+            price:''
         }
     }
 });
@@ -32,7 +38,7 @@ const app = dva({
 // app.model(require('./models/example').default);
 app.model(require('./models/navigator').default);
 app.model(require('./models/mapData').default);
-app.model(require('./models/trip').default);
+// app.model(require('./models/trip').default);
 // 4. Router
 app.router(require('./router').default);
 
