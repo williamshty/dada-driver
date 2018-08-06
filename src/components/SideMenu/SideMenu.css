@@ -83,6 +83,16 @@
     width: 35px;
     height: 35px;
 }
+.button__menu{
+    position: absolute;
+    z-index: 2;
+    width: 64px;
+    height: 64px;
+    margin-left: 20px;
+    margin-top: 589.5px;
+    background-image: url('../../assets/button_menu.png');
+    background-size: contain;
+}
 
 .button__animated{
     position:absolute;
@@ -119,26 +129,23 @@ to {top:0px;}
 
 
 .sidebar__background {
- /* background: url('../../assets/sidebar-layer1.png') no-repeat top; */
- width: 275px;
+ background-image: url('../../assets/side_bar_bg.png');
+ background-size: contain;
+ width: 232px;
  height: 667px;
- background-color: #2b71db;
+ /* background-color: #2b71db; */
 }
 .sidebar__mask {
  background-size: 275px 667px;
  /* background: url('../../assets/sidebar-mask.png') no-repeat top; */
 }
-.sidebar__background__filler {
- width: 275px;
- height: 667px;
-}
 
 .sidebar__menu {
-    margin-top: 96px;
+    margin-top: 143px;
     position: absolute;
-    width: 275px;
-    height: 571px;
-    background-color: #fff;
+    width: 232px;
+    height: 524px;
+    /* background-color:rgba(0,0,0, 0.7); */
     font-size: 16px;
     color: #333333;
     /* background: url('../../assets/sidebar-layer2.png') no-repeat top; */
@@ -148,96 +155,118 @@ to {top:0px;}
     height: 571px;
     font-size: 1em;
 }
-
-.phone__number{
-    font-size: 18px;
-    font-family: "PingFang-SC-Heavy";
-    color:#fff;
-    margin-top: 61px;
-    margin-left: 11.5px;
-    position: absolute;
-}
 .driver__icon{
-    margin-left: 10.5px;
-    margin-top: 48px;
+    margin-left: 27.5px;
+    margin-top: 50.5px;
     position: absolute;
     background-image: url('../../assets/side_driver.png');
     background-size: contain;
-    width: 18px;
-    height: 18px;
+    width: 13px;
+    height: 13px;
 }
 .driver__text{
     position: absolute;
-    margin-left: 36.5px;
-    margin-top: 50px;
+    margin-left: 58.5px;
+    margin-top: 51px;
+    font-size: 13px;
+    font-weight: 400;
 }
 .history__icon{
-    margin-left: 10.5px;
-    margin-top: 93.5px;
+    margin-left: 27.5px;
+    margin-top: 96px;
     position: absolute;
     background-image: url('../../assets/side_history.png');
     background-size: contain;
-    width: 18px;
-    height: 18px;
+    width: 13px;
+    height: 13px;
 }
 .history__text{
     position: absolute;
-    margin-left: 36.5px;
-    margin-top: 95px;
-}
-.wallet__icon{
-    margin-left: 10.5px;
-    margin-top: 139px;
-    position: absolute;
-    background-image: url('../../assets/side_wallet.png');
-    background-size: contain;
-    width: 18px;
-    height: 18px;
-}
-.wallet__text{
-    position: absolute;
-    margin-left: 36.5px;
-    margin-top: 140px;
+    margin-left: 58.5px;
+    margin-top: 96px;
+    font-size: 13px;
+    font-weight: 400;
 }
 .privacy__icon{
-    margin-left: 10.5px;
-    margin-top: 183.5px;
+    margin-left: 27.5px;
+    margin-top: 141.5px;
     position: absolute;
     background-image: url('../../assets/side_privacy.png');
     background-size: contain;
-    width: 18px;
-    height: 18px;
+    width: 13px;
+    height: 13px;
 }
 .privacy__text{
     position: absolute;
-    margin-left: 36.5px;
-    margin-top: 185.5px;
+    margin-left: 58.5px;
+    margin-top: 141px;
+    font-size: 13px;
+    font-weight: 400;
 }
 .about__icon{
-    margin-left: 10.5px;
-    margin-top: 230px;
+    margin-left: 27.5px;
+    margin-top: 186.5px;
     position: absolute;
     background: url('../../assets/side_about.png') no-repeat;
     background-size: contain;
-    width: 18px;
-    height: 18px;
+    width: 13px;
+    height: 13px;
 }
 .about__text{
     position: absolute;
-    margin-left: 36.5px;
-    margin-top: 230.5px;
+    margin-left: 58.5px;
+    margin-top: 186px;
+    font-size: 13px;
+    font-weight: 400;
 }
 .exit__icon{
-    margin-left: 10.5px;
-    margin-top: 292px;
+    margin-left: 27.5px;
+    margin-top: 249.5px;
     position: absolute;
     background: url('../../assets/side_exit.png') no-repeat;
     background-size: contain;
-    width: 18px;
-    height: 18px;
+    width: 13px;
+    height: 13px;
 }
 .exit__text{
     position: absolute;
-    margin-left: 36.5px;
-    margin-top: 294px;
+    margin-left: 58.5px;
+    margin-top: 249.5px;
+    font-size: 13px;
+    font-weight: 400;
+}
+.side__avatar{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    margin-left: 100px;
+    margin-top: 41.5px;
+    background-image: url('../../assets/side_avatar.png');
+    background-size: contain;
+}
+.phone__number{
+    position: absolute;
+    font-size: 18px;
+    font-family: "PingFang-SC-Medium";
+    color:#fff;
+    margin-top: 81px;
+    top: -7px;
+    margin-left: 116px;
+    transform: translate(-50%,50%)
+}
+.money__text{
+    margin-left: 26.5px;
+    margin-top: 114px;
+    position: absolute;
+    font-family: "PingFang-SC-Bold";
+    color:#fff;
+    font-size: 12px;
+}
+.money__amount{
+    margin-left: 138.5px;
+    margin-top: 114px;
+    position: absolute;
+    font-family: "PingFang-SC-Bold";
+    color:#fff;
+    font-size: 12px;
 }

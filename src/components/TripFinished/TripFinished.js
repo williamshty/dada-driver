@@ -48,7 +48,7 @@ class TripFinished extends React.Component {
 
                         {(()=>{
                             return this.state.stars.map((value)=>
-                            <div
+                            <div key={value}
                             onClick={()=>{
                                 this.setState({activatedStars:value},()=>{
                                     
@@ -84,7 +84,7 @@ TripFinished.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return this.state
+  return state
 }
 
 export default connect(mapStateToProps)(TripFinished);

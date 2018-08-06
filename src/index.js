@@ -9,13 +9,13 @@ const app = dva({
     initialState:{
         navigator:{
             sideMenuOpen:false,
-            returnInitialStateTriggered:false,
+            returnInitialStateTriggered:true,
             orderGenerationTriggered:false,
             findingDriverTriggered:false,
             driverFoundTriggered:false,
             inTripTriggered:false,
             confirmTripEndTriggered:false,
-            tripFinishedTriggered:true,
+            tripFinishedTriggered:false,
             priceFocusTriggered:0,
             isLoggedIn:false
         },

@@ -1,6 +1,7 @@
 
 html, body, :global(#root) {
   height: 100%;
-  /* font-size:40px !important; */
+  
+  /* margin-top: -10px; */
 }
 

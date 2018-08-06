@@ -5,7 +5,10 @@ import styles from './SideMenu.css'
 import loadPosition from '../../utils/locater'
 const sidebar = (
 <div className={styles.sidebar__background}>
-      <div className={styles.phone__number}>138 4024 3280</div>
+      <div className={styles.side__avatar}></div>
+      <div className={styles.phone__number}>138****3280</div>
+      <div className={styles.money__text}>剩余星云币</div>
+      <div className={styles.money__amount}>326.00 NAS</div>
       <div className={styles.sidebar__menu}>
         <div className={styles.driver__icon}></div>
         <div className={styles.driver__text}>
@@ -15,10 +18,10 @@ const sidebar = (
         <div className={styles.history__text}>
         历史订单
         </div>
-        <div className={styles.wallet__icon}></div>
+        {/* <div className={styles.wallet__icon}></div>
         <div className={styles.wallet__text}>
         我的钱包
-        </div>
+        </div> */}
         <div className={styles.privacy__icon}></div>
         <div className={styles.privacy__text}>
         隐私与法律条款
@@ -42,7 +45,6 @@ class SideMenu extends React.Component {
     super(props);
     this.state = {
       sideMenuOpen:this.props.sideMenuOpen,
-      buttonStyle:styles.button,
       trafficActivated:false
     }
   }
@@ -50,8 +52,7 @@ class SideMenu extends React.Component {
   render(){
     return (
       <div>
-          <div className={this.state.buttonStyle}>
-          <img alt="avatar" width={38} onClick={()=>this.onOpenChange()} src={require('../../assets/side_bar.png')}></img>
+          <div className={styles.button__menu} onClick={()=>this.onOpenChange()}>
           </div>
 
           {(()=>{
@@ -75,7 +76,7 @@ class SideMenu extends React.Component {
           </div>
         <Drawer
           className="my-drawer"
-          style={{ minHeight: document.documentElement.clientHeight, fontSize:10 }}
+          style={{ minHeight: document.documentElement.clientHeight, fontSize:10}}
           enableDragHandle
           contentStyle={{ color: '#A6A6A6', textAlign: 'center'}}
           sidebar={sidebar}

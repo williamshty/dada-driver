@@ -21,6 +21,7 @@
     margin-top: 31px;
     margin-left: 46px;
     font-size: 18px;
+    font-weight: 600;
     color: #333333;
 }
 .bottom__card__info{
@@ -124,3 +125,33 @@
     position: absolute;
     /* margin-top:11.5px;  */
   }
+.cancel__button{
+    position: absolute;
+    margin-left: 15.5px;
+    margin-top: 32px;
+    width:15px;
+    height:15px;
+    background-image: url('../../assets/cancel.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.cancel__mask{
+    position: absolute;
+    margin-left: 0px;
+    margin-top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.15);
+    z-index: 5000;
+}
+.cancel__confirmed__info{
+    position: absolute;
+    margin-left: 65.5px;
+    margin-top: 263px;
+    height: 141px;
+    width: 244px;
+    background-image: url('../../assets/cancel_success_charged.png');
+    background-size: 244px 141px;
+    background-repeat: no-repeat;
+    z-index: 5000;
+}

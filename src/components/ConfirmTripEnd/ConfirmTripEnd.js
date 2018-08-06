@@ -27,16 +27,48 @@ class ConfirmTripEnd extends React.Component {
           <div className={styles.bottom__container}>
             <div className={styles.bottom__confirm__card}>
                 <div className={styles.bottom__card__title}>
-                请确认行程是否完成
+                行程结束
                 </div>
                 <div className={styles.bottom__card__info}>
-                与 3 人一同拼车，共 36 公里，耗时 2 小时 1 分钟
+                请确认行程是否完成
                 </div>
-                <div className={styles.bottom__card__contact}>
-                未完成,联系客服
+                <img className={styles.divider__title} src={require('../../assets/矩形 609.png')}/>
+                <div className={styles.bottom__distance__title}>
+                路程
                 </div>
+                <div className={styles.bottom__distance}>
+                42 Km
+                </div>
+                <div className={styles.bottom__pax__title}>
+                拼车人数
+                </div>
+                <div className={styles.bottom__pax}>
+                2 人
+                </div>
+                <div className={styles.bottom__time__title}>
+                时间
+                </div>
+                <div className={styles.bottom__time}>
+                48 Min
+                </div>
+                <div className={styles.end__icon}></div>
             </div>
-            <div className={styles.bottom__submit__button} onClick={()=>{
+          </div>
+          {/* <div className={styles.bottom__submit__button} onClick={()=>{
+              this.props.dispatch({
+                type:'navigator/save',
+                payload:{
+                    confirmTripEndTriggered:false,
+                    tripFinishedTriggered:true
+                }
+              })
+            }}>
+            确认行程完成
+            </div> */}
+            <div className={styles.button__contact}>
+            未完成，联系客服
+            </div>
+            <div className={styles.button__confirm} onClick={()=>{
               this.props.dispatch({
                 type:'navigator/save',
                 payload:{
@@ -47,8 +79,9 @@ class ConfirmTripEnd extends React.Component {
             }}>
             确认行程完成
             </div>
-          </div>
-       </div> 
+       </div>
+
+
     );
   }
 

@@ -6,6 +6,7 @@ import {routerRedux} from 'dva/router';
 import {getLoginVerificationCode} from '../../utils/webServices'
 import SearchItem from '../../components/Forms/SearchItem'
 import SearchListItem from '../../components/SearchListItem/SearchListItem'
+import CustomModal from '../../components/Modals/CustomModal'
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
@@ -156,7 +157,15 @@ class LoginPage extends React.Component {
         // iconColor='#1ad371'
         // onKeyPress={(e)=>{console.log(e.key)}}/>
        <div>
-        
+        <CustomModal
+        title='提示'
+        info={`已有司机接单，取消订单将扣除20%费用\r\n是否确认取消`}
+        leftText='返回'
+        rightColor='#ff5151'
+        rightText='取消行程'
+        onLeftClick={()=>{console.log('left clicked')}}
+        onRightClick={()=>{console.log('right clicked')}}
+        />
        </div>
       )
     }

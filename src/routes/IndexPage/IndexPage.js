@@ -14,16 +14,16 @@ class IndexPage extends React.Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount(){
-    // console.log(this.props)
-    if(!localStorage.getItem('isLoggedIn')){
-      console.log('not logged in')
-      this.props.dispatch(routerRedux.push({pathname:'/login'}))
-    }
-  }
+  // componentDidMount(){
+  //   if(!localStorage.getItem('isLoggedIn')){
+  //     console.log('not logged in')
+  //     this.props.dispatch(routerRedux.push({pathname:'/login'}))
+  //   }
+  // }
     render(){
       return (
         <div className={styles.normal}>
+        <div className={styles.bottom__mask}></div>
           {(()=>{
             if(this.props.navigator.returnInitialStateTriggered){
             return (
@@ -33,7 +33,6 @@ class IndexPage extends React.Component {
                   returnInitialStateTriggered:false,
                   orderGenerationTriggered:true
                 }})}>
-               <div className={styles.button__bottom__filler}></div>
               </div>
               <SideMenu/>
             </div>

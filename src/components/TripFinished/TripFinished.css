@@ -81,7 +81,7 @@
     height: 32px;
     margin-left: 160.5px;
     margin-top: 49px;
-    background-color: #000;
-    /* background-image: url();
-    background-size: contain; */
+    /* background-color: #000; */
+    background-image: url('../../assets/rating_thanks.png');
+    background-size: contain;
 }
