@@ -21,4 +21,22 @@
     font-size: 18px;
     margin-left: 45.5px;
     margin-top: 31px;
+    position: absolute;
+}
+.history__scroller{
+    position: absolute;
+    margin-top: 64px;
+    height: 603px;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: #f2f2f2;
+    margin-right: -20px;
+    padding-right: 20px;
+}
+.history__card__container{
+    /* margin-top: 11px; */
+    margin-left: 10.5px;
+    position: relative;
+    width: 353.5px;
+    height: 182px;
 }

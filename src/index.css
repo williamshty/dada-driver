@@ -1,7 +1,7 @@
 
 html, body, :global(#root) {
   height: 100%;
-  
+  /* for release */
   /* margin-top: -10px; */
 }
 

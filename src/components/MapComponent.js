@@ -30,7 +30,7 @@ class MapComponent extends React.Component {
       <Map 
       style={{height: '100%'}} 
       center={this.state.currentLocation} 
-      zoom="17"
+      zoom="12"
       mapStyle={{styleJson: this.state.mapJSON}}>
       {/* add json format style in above [] */}
        {(()=>{

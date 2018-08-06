@@ -133,6 +133,8 @@ to {top:0px;}
  background-size: contain;
  width: 232px;
  height: 667px;
+ position: relative;
+ z-index: 50000;
  /* background-color: #2b71db; */
 }
 .sidebar__mask {
@@ -270,3 +272,18 @@ to {top:0px;}
     color:#fff;
     font-size: 12px;
 }
+.my-drawer {
+    position: relative;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .my-drawer .am-drawer-sidebar {
+    background-color: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .my-drawer .am-drawer-sidebar .am-list {
+    width: 300px;
+    padding: 0;
+  }
+  

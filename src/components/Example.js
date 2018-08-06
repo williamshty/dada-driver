@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'dva';
-
 class Example extends React.Component {
   constructor(props) {
     super(props);

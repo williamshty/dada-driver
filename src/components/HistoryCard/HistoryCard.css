@@ -1,0 +1,74 @@
+.history__card{
+    position: absolute;
+    width: 353.5px;
+    height: 171px;
+    background-color: #ffffff;
+    color: #333333;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    /* margin-top: 11px; */
+}
+.start__caption{
+    position: absolute;
+    margin-left: 19px;
+    margin-top: 28.5px;
+    font-size: 12px;
+    color:#666666;
+}
+.start__title{
+    position: absolute;
+    font-size: 13px;
+    margin-top: 17.5px;
+    width: 335.5px;
+    text-align: right;
+}
+.start__info{
+    position: absolute;
+    font-size: 11px;
+    margin-top: 38.5px;
+    width: 335.5px;
+    text-align: right;
+}
+.end__caption{
+    position: absolute;
+    margin-left: 19px;
+    margin-top: 85px;
+    font-size: 12px;
+    color:#666666;
+}
+.end__title{
+    position: absolute;
+    font-size: 13px;
+    margin-top: 74px;
+    width: 335.5px;
+    text-align: right;
+}
+.end__info{
+    position: absolute;
+    font-size: 11px;
+    margin-top: 95px;
+    width: 335.5px;
+    text-align: right;
+}
+.time__stamp{
+    position: absolute;
+    font-size: 11px;
+    margin-left: 19px;
+    margin-top: 142.5px;
+    color: #999999;
+}
+.trip__price{
+    position: absolute;
+    font-size: 11px;
+    margin-top: 142.5px;
+    width: 335.5px;
+    text-align: right;
+    color: #999999;
+}
+.divider__title{
+    width:331px;
+    height: 1px;
+    margin-left: 11.5px;
+    margin-top: 124px;
+    position: absolute;
+}
