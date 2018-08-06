@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 // import { Map } from 'react-amap';
+import {mapStyle} from '../utils/mapStyle'
 import loadPosition from '../utils/locater'
 import {searchLocation} from '../utils/baiduQuery'
 import {Map, DrivingRoute,Marker, NavigationControl, InfoWindow, TrafficLayer} from 'react-bmap'
@@ -8,7 +9,8 @@ class MapComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentLocation:this.props.mapData.currentLocation
+      currentLocation:this.props.mapData.currentLocation,
+      mapJSON : mapStyle
     }
   }
   async loadSearchedLocation (param) {
@@ -28,8 +30,8 @@ class MapComponent extends React.Component {
       <Map 
       style={{height: '100%'}} 
       center={this.state.currentLocation} 
-      zoom="12"
-      mapStyle={{styleJson: []}}>
+      zoom="17"
+      mapStyle={{styleJson: this.state.mapJSON}}>
       {/* add json format style in above [] */}
        {(()=>{
          if(this.props.mapData.trafficActivated) return(<TrafficLayer/>)    

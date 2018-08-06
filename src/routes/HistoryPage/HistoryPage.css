@@ -1,0 +1,24 @@
+.base__container{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    background-color: #f2f2f2;
+    font-family: 'PingFang-SC-Regular'
+}
+.top__container{
+    position: absolute;
+    width: 100%;
+    height: 64px;
+    background-color: #fff;
+}
+.back__arrow{
+    position: absolute;
+    margin-left: 18px;
+    margin-top: 32px;
+}
+.top__title{
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 45.5px;
+    margin-top: 31px;
+}

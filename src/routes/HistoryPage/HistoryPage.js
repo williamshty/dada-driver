@@ -4,13 +4,16 @@ import styles from './HistoryPage.css';
 
 function HistoryPage() {
   return (
-    <div className={styles.normal}>
-      <h1 className={styles.title}>Yay! Welcome to dva!</h1>
-      <div className={styles.welcome} />
-      <ul className={styles.list}>
-        <li>To get started, edit <code>src/index.js</code> and save to reload.</li>
-        <li><a href="https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md">Getting Started</a></li>
-      </ul>
+    <div className={styles.base__container}>
+      {/* <div className={}></div> */}
+      <div className={styles.top__container}>
+        <div className={styles.back__arrow} onClick={() => {}}>
+                <img width={8} src={require('../../assets/backArrow.png')}></img>
+        </div>
+        <div className={styles.top__title}>
+        历史订单
+        </div>
+      </div>
     </div>
   );
 }
