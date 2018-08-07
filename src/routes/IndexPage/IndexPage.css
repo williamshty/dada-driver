@@ -1,7 +1,162 @@
 .base__container{
   width:100%;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
   position: absolute;
-  background-color: #f2f2f2;
+  z-index: 2;
+  background-image: linear-gradient(to right, #ffbc3b 0%,#ffa632 100%);
   font-family: 'PingFang-SC-Regular'
+}
+.side__menu__container{
+  position: relative;
+  z-index: 4;
+}
+.side__menu__container__below{
+  position: relative;
+  z-index: 3;
+}
+.top__logo__container{
+  position: absolute;
+  margin-left: 171px;
+  margin-top: 24px;
+  width: 27px;
+  height: 30.5px;
+  background-image: url('../../assets/driver_logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.top__closed__text{
+  position: absolute;
+  margin-top: 30.5px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+}
+.top__toggle__work{
+  position: absolute;
+  z-index: 4;
+  margin-left: 330.5px;
+  margin-top: 31.5px;
+  font-size: 16px;
+  text-decoration: underline;
+  color: #ffffff;
+  font-weight: 300;
+}
+.driver__card__container{
+  position: absolute;
+  z-index: 3;
+  margin-top: 64px;
+  margin-left: 11px;
+}
+.driver__order__container{
+  position: absolute;
+  margin-top: 143.5px;
+  width: 375px;
+  height: 524px;;
+  z-index: 2;
+  background-image: url('../../assets/driver_order.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.driver__status__container{
+  position: absolute;
+  margin-top: 270px;
+  height: 397px;
+  width: 375px;
+  z-index: 3;
+  background-color: #f2f2f2;
+}
+.driver__order__list{
+  position: absolute;
+  height: 397px;
+  width: 375px;
+  overflow-y: auto;
+  z-index: 3;
+  margin-right: 20px;
+  padding-right: 20px;
+}
+.driver__order__list__float{
+  position: absolute;
+  height: 397px;
+  width: 375px;
+  overflow-y: auto;
+  z-index: 400;
+  margin-right: 20px;
+  padding-right: 20px;
+}
+.driver__order__item{
+  margin-left: 11px;
+    /* position: relative; */
+    width: 353px;
+    height: 141.5px;
+}
+
+.driver__status__button{
+  position: absolute;
+  z-index: 4;
+  margin-top: 340px;
+  margin-left: 11px;
+  width: 353px;
+  height: 44px;
+  background-color: #333333;
+  border-radius:5px;
+}
+.driver__status__button__text{
+  position: absolute;
+  width: 100%;
+  color: #ffffff;
+  margin-top: 12px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 200;
+}
+.driver__status__closed{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/status_closed.png');
+  background-size: contain;
+}
+.driver__status__fill__ip{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/status_fill_ip.png');
+  background-size: contain;
+}
+.driver__status__fill__empty{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/status_fill_empty.png');
+  background-size: contain;
+}
+.driver__status__evaluation__ip{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/status_evaluation_ip.png');
+  background-size: contain;
+}
+.driver__status__evaluation__failed{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/status_evaluation_failed.png');
+  background-size: contain;
+}
+.driver__status__verify__ip{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/status_verify_ip.png');
+  background-size: contain;
+}
+.driver__status__verify__failed{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/status_verify_failed.png');
+  background-size: contain;
 }

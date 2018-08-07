@@ -1,0 +1,88 @@
+.history__card{
+    position: absolute;
+    width: 353.5px;
+    height: 131.5px;
+    background-color: #ffffff;
+    color: #333333;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    /* margin-top: 11px; */
+}
+.start__caption{
+    position: absolute;
+    margin-left: 15.5px;
+    margin-top: 32px;
+    font-size: 12px;
+    color:#666666;
+}
+.start__title{
+    position: absolute;
+    font-size: 13px;
+    margin-top: 25px;
+    margin-left: 57px;
+    font-weight: 700;
+}
+.start__info{
+    position: absolute;
+    font-size: 11px;
+    margin-top: 46px;
+    margin-left: 57.5px;
+}
+.end__caption{
+    position: absolute;
+    margin-left: 15.5px;
+    margin-top: 85.5px;
+    font-size: 12px;
+    color:#666666;
+}
+.end__title{
+    position: absolute;
+    font-size: 13px;
+    margin-top: 74.5px;
+    margin-left: 57px;
+    font-weight: 700;
+}
+.end__info{
+    position: absolute;
+    font-size: 11px;
+    margin-top: 95.5px;
+    margin-left: 57.5px;
+}
+.time__stamp{
+    position: absolute;
+    font-size: 11px;
+    color: #999999;
+    margin-top: 75px;
+    margin-right: 20.5px;
+    width: 332.5px;
+    text-align: right;
+}
+.trip__price{
+    position: absolute;
+    margin-left:242.5px;
+    margin-top: 53.5px;
+    width: 109px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333333;
+    /* z-index: 5; */
+}
+.divider__vertical{
+    width:1.5px;
+    height: 109.5px;
+    margin-left: 242.5px;
+    margin-top: 11px;
+    background-color: #ececec;
+    position: absolute;
+}
+.time__icon{
+    position: absolute;
+    margin-top: 74.5px;
+    margin-left: 264.5px;
+    width: 11px;
+    height: 11px;
+    background-image: url('../../assets/order_time.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

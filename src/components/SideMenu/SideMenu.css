@@ -3,7 +3,7 @@
     position:absolute;
     margin-left: 11px;
     margin-top:19px;
-    z-index: 1000;
+    z-index: 1;
 }
 .button__bottom{
     position:absolute;
@@ -86,11 +86,11 @@
 .button__menu{
     position: absolute;
     z-index: 2;
-    width: 64px;
-    height: 64px;
-    margin-left: 20px;
-    margin-top: 589.5px;
-    background-image: url('../../assets/button_menu.png');
+    width: 15px;
+    height: 15px;
+    margin-left: 15.5px;
+    margin-top: 32px;
+    background-image: url('../../assets/driver_menu.png');
     background-size: contain;
 }
 
@@ -134,7 +134,7 @@ to {top:0px;}
  width: 232px;
  height: 667px;
  position: relative;
- z-index: 50000;
+ z-index: -2;
  /* background-color: #2b71db; */
 }
 .sidebar__mask {
@@ -157,25 +157,9 @@ to {top:0px;}
     height: 571px;
     font-size: 1em;
 }
-.driver__icon{
-    margin-left: 27.5px;
-    margin-top: 50.5px;
-    position: absolute;
-    background-image: url('../../assets/side_driver.png');
-    background-size: contain;
-    width: 13px;
-    height: 13px;
-}
-.driver__text{
-    position: absolute;
-    margin-left: 58.5px;
-    margin-top: 51px;
-    font-size: 13px;
-    font-weight: 400;
-}
 .history__icon{
     margin-left: 27.5px;
-    margin-top: 96px;
+    margin-top: 50.5px;
     position: absolute;
     background-image: url('../../assets/side_history.png');
     background-size: contain;
@@ -185,13 +169,13 @@ to {top:0px;}
 .history__text{
     position: absolute;
     margin-left: 58.5px;
-    margin-top: 96px;
+    margin-top: 51px;
     font-size: 13px;
     font-weight: 400;
 }
 .privacy__icon{
     margin-left: 27.5px;
-    margin-top: 141.5px;
+    margin-top: 96px;
     position: absolute;
     background-image: url('../../assets/side_privacy.png');
     background-size: contain;
@@ -201,13 +185,13 @@ to {top:0px;}
 .privacy__text{
     position: absolute;
     margin-left: 58.5px;
-    margin-top: 141px;
+    margin-top: 96px;
     font-size: 13px;
     font-weight: 400;
 }
 .about__icon{
     margin-left: 27.5px;
-    margin-top: 186.5px;
+    margin-top: 141.5px;
     position: absolute;
     background: url('../../assets/side_about.png') no-repeat;
     background-size: contain;
@@ -217,13 +201,13 @@ to {top:0px;}
 .about__text{
     position: absolute;
     margin-left: 58.5px;
-    margin-top: 186px;
+    margin-top: 141px;
     font-size: 13px;
     font-weight: 400;
 }
 .exit__icon{
-    margin-left: 27.5px;
-    margin-top: 249.5px;
+    margin-left: 29px;
+    margin-top: 203.5px;
     position: absolute;
     background: url('../../assets/side_exit.png') no-repeat;
     background-size: contain;
@@ -233,7 +217,7 @@ to {top:0px;}
 .exit__text{
     position: absolute;
     margin-left: 58.5px;
-    margin-top: 249.5px;
+    margin-top: 204px;
     font-size: 13px;
     font-weight: 400;
 }

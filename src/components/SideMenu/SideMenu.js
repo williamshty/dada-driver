@@ -24,10 +24,6 @@ class SideMenu extends React.Component {
         <div className={styles.money__text}>剩余星云币</div>
         <div className={styles.money__amount}>326.00 NAS</div>
         <div className={styles.sidebar__menu}>
-          <div className={styles.driver__icon}></div>
-          <div className={styles.driver__text}>
-            成为搭搭车主
-            </div>
           <div className={styles.history__icon}></div>
           <div className={styles.history__text} onClick={(e)=>{
             e.stopPropagation()
@@ -54,30 +50,9 @@ class SideMenu extends React.Component {
       <div>
         <div className={styles.button__menu} onClick={() => this.onOpenChange()}>
         </div>
-
-        {(() => {
-          if (!this.state.trafficActivated) {
-            return (
-              <div className={styles.button__traffic__deactive} onClick={() => this.onToggleTraffic()}>
-                <div className={styles.button__side__filler}></div>
-              </div>
-            )
-          }
-          else {
-            return (
-              <div className={styles.button__traffic__active} onClick={() => this.onToggleTraffic()}>
-                <div className={styles.button__side__filler}></div>
-              </div>
-            )
-          }
-        })()}
-        <div className={styles.button__focus} onClick={() => loadPosition(this.props.dispatch)}>
-          <div className={styles.button__side__filler}></div>
-        </div>
         <Drawer
           className="my-drawer"
           style={{ minHeight: document.documentElement.clientHeight, fontSize: 10 }}
-          enableDragHandle
           contentStyle={{ color: '#A6A6A6', textAlign: 'center' }}
           sidebar={sidebar}
           open={this.state.sideMenuOpen}
@@ -95,12 +70,24 @@ class SideMenu extends React.Component {
         sideMenuOpen: !this.state.sideMenuOpen,
         buttonStyle: styles.button__animated
       });
+      this.props.dispatch({
+        type:'navigator/save',
+        payload:{
+          sideMenuOpen: !this.props.navigator.sideMenuOpen
+        }
+      })
     }
     else {
       this.setState({
         sideMenuOpen: !this.state.sideMenuOpen,
         buttonStyle: styles.button__animated_reverse
       });
+      this.props.dispatch({
+        type:'navigator/save',
+        payload:{
+          sideMenuOpen: !this.props.navigator.sideMenuOpen
+        }
+      })
     }
 
 

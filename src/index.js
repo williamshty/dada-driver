@@ -27,6 +27,16 @@ const app = dva({
             end: '',
             length:'',
             price:''
+        },
+        driverStatus:{
+            opened:true,
+            closed:false,
+            fillEmpty:false,
+            fillIp:false,
+            evaluationIp:false,
+            evaluationFailed:false,
+            verifyIp:false,
+            verifyFailed:false
         }
     }
 });
@@ -38,6 +48,7 @@ const app = dva({
 // app.model(require('./models/example').default);
 app.model(require('./models/navigator').default);
 app.model(require('./models/mapData').default);
+app.model(require('./models/driverStatus').default);
 // app.model(require('./models/trip').default);
 // 4. Router
 app.router(require('./router').default);
