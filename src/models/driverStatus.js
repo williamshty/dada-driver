@@ -11,7 +11,8 @@ export default {
       evaluationIp:false,
       evaluationFailed:false,
       verifyIp:false,
-      verifyFailed:false
+      verifyFailed:false,
+      currentOrder:{}
     },
   
     subscriptions: {

@@ -19,7 +19,11 @@ class OrderCard extends React.Component {
         // <div className={}></div>
         <div>
           <div style={{height:10}}/>
-          <div className={styles.history__card}>
+          <div className={styles.history__card} onClick={()=>{
+            if(this.props.onClick){
+              this.props.onClick.bind(this)
+            }
+          }}>
             <div className={styles.start__caption}>
             起点
             </div>

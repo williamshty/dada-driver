@@ -9,10 +9,10 @@ const app = dva({
     initialState:{
         navigator:{
             sideMenuOpen:false,
-            returnInitialStateTriggered:true,
+            returnInitialStateTriggered:false,
             orderGenerationTriggered:false,
             findingDriverTriggered:false,
-            driverFoundTriggered:false,
+            driverFoundTriggered:true,
             inTripTriggered:false,
             confirmTripEndTriggered:false,
             tripFinishedTriggered:false,
@@ -36,7 +36,17 @@ const app = dva({
             evaluationIp:false,
             evaluationFailed:false,
             verifyIp:false,
-            verifyFailed:false
+            verifyFailed:false,
+            currentOrder:{
+                startTitle: "锦江瑞康医院",
+                startInfo: "成都市成华区牛市口",
+                endTitle: "天府软件园A区",
+                endInfo: "四川省成都市武侯区天府三街",
+                time: "1h 12min",
+                price: "13.70",
+                distance: "12",
+                pax:'2'
+              }
         }
     }
 });

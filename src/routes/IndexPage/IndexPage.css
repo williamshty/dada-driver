@@ -87,9 +87,10 @@
 }
 .driver__order__item{
   margin-left: 11px;
-    /* position: relative; */
+    position: relative;
     width: 353px;
     height: 141.5px;
+    /* z-index: 4000; */
 }
 
 .driver__status__button{

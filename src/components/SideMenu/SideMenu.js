@@ -11,7 +11,6 @@ class SideMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sideMenuOpen: this.props.sideMenuOpen,
       trafficActivated: false
     }
   }
@@ -55,7 +54,7 @@ class SideMenu extends React.Component {
           style={{ minHeight: document.documentElement.clientHeight, fontSize: 10 }}
           contentStyle={{ color: '#A6A6A6', textAlign: 'center' }}
           sidebar={sidebar}
-          open={this.state.sideMenuOpen}
+          open={this.props.navigator.sideMenuOpen}
           onOpenChange={() => this.onOpenChange()}
           children={<div></div>}
         >
@@ -66,10 +65,6 @@ class SideMenu extends React.Component {
 
   onOpenChange() {
     if (this.state.buttonStyle !== styles.button__animated) {
-      this.setState({
-        sideMenuOpen: !this.state.sideMenuOpen,
-        buttonStyle: styles.button__animated
-      });
       this.props.dispatch({
         type:'navigator/save',
         payload:{
@@ -78,10 +73,6 @@ class SideMenu extends React.Component {
       })
     }
     else {
-      this.setState({
-        sideMenuOpen: !this.state.sideMenuOpen,
-        buttonStyle: styles.button__animated_reverse
-      });
       this.props.dispatch({
         type:'navigator/save',
         payload:{

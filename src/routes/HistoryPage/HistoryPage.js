@@ -9,6 +9,8 @@ class HistoryPage extends React.Component {
   }
 
   render() {
+    document.getElementById("root").style.marginTop = '-10px';
+    document.getElementsByTagName("META")[6].content='white';
     return (
     <div className={styles.base__container}>
       <div className={styles.top__container}>

@@ -5,8 +5,8 @@ export default {
   
     state: {
         sideMenuOpen:false,
-        returnInitialStateTriggered:true,
-        orderGenerationTriggered:false,
+        returnInitialStateTriggered:false,
+        orderGenerationTriggered:true,
         findingDriverTriggered:false,
         driverFoundTriggered:true,
         inTripTriggered:false,

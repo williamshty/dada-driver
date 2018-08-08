@@ -71,8 +71,8 @@ class SearchItem extends React.Component {
                 })
             }}
             placeholder={this.state.enteredPlaceholder}
+            disabled={true}
             />
-            <img className={styles.search__divider} src={require('../../assets/矩形 609.png')}/>
         </div>
       )
   }

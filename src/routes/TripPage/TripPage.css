@@ -1,0 +1,45 @@
+.normal {
+    font-family: Georgia, sans-serif;
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+}
+
+.map__container {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: auto;
+    position: absolute;
+}
+
+.page__head {
+    z-index: 100;
+    /* position: relative; */
+    /* height: 100%; */
+}
+
+.button__bottom {
+    position: absolute;
+    margin-left: 291px;
+    margin-top: 589.5px;
+    width: 64px;
+    height: 64px;
+    z-index: 1;
+    background: url('../../assets/button_ride.png') no-repeat top;
+    background-size: contain;
+}
+
+.button__bottom__filler {
+    width: 74px;
+    height: 74px;
+}
+
+.bottom__mask {
+    position: absolute;
+    margin-top: 589.5px;
+    width: 100%;
+    height: 77.5px;
+    z-index: 1;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+}
