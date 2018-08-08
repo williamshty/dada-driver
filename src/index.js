@@ -9,16 +9,12 @@ const app = dva({
   initialState: {
     navigator: {
       sideMenuOpen: false,
-      returnInitialStateTriggered: false,
       orderGenerationTriggered: false,
-      findingDriverTriggered: false,
       driverFoundTriggered: false,
-      rideShareTriggered: false,
-      clientConfirmed:false,
       inTripTriggered: false,
-      confirmTripEndTriggered: false,
-      tripFinishedTriggered: false,
-      priceFocusTriggered: 0,
+      rideShareTriggered: false,
+      confirmTripEndTriggered: true,
+      clientConfirmed: true,
       isLoggedIn: false
     },
     mapData: {
