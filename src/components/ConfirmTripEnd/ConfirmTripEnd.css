@@ -136,33 +136,33 @@
     width:32px;
     height: 32px;
     position: absolute;
-    background-color: #000;
-    /* background-image: url();
+    /* background-color: #000; */
+    background-image: url('../../assets/trip_finished.png');
     background-size: contain;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
 }
-.button__contact{
+.button__disabled{
     position: absolute;
     z-index: 3000;
     margin-left: 11px;
     margin-top: 609px;
-    width: 168.5px;
+    width: 353px;
     height: 44px;
-    background-color: #fff;
+    background-color: #cccccc;
     border-radius: 5px;
     font-size: 16px;
-    color: #333333;
+    color: #fff;
     font-weight: 400;
     box-sizing: border-box;
     padding-top: 14px;
-    padding-left: 20.5px;
+    text-align: center;
 }
 .button__confirm{
     position: absolute;
     z-index: 3000;
-    margin-left: 195.5px;
+    margin-left: 11px;
     margin-top: 609px;
-    width: 168.5px;
+    width: 353px;
     height: 44px;
     background-image: linear-gradient(to right, #ffbc3b 0%,#ffa632 100%);
     border-radius: 5px;
@@ -171,5 +171,44 @@
     font-weight: 400;
     box-sizing: border-box;
     padding-top: 14px;
-    padding-left: 37px;
+    text-align: center;
+}
+.finished__pop__up__container{
+    position: absolute;
+    margin-left: 11px;
+    margin-top: 446px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    width: 353px;
+    height: 113.5px;
+    z-index: 4;
+    font-family: 'PingFang-SC-Medium';
+}
+.pop__info{
+    position: absolute;
+    margin-top: 81px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    line-height: 12px;
+    color: #ffffff;
+    font-weight: 300;
+}
+.pop__price{
+    position: absolute;
+    margin-top: 33.5px;
+    margin-left: 158px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 12px;
+    color: #ffffff;
+    font-weight: 300;
+}
+.pop__icon{
+    position: absolute;
+    width: 43.5px;
+    height: 43.5px;
+    margin-left: 102px;
+    margin-top: 19px;
+    background-color: #fff;
 }

@@ -6,6 +6,8 @@ export default {
     state: {
         sideMenuOpen:false,
         returnInitialStateTriggered:false,
+        rideShareTriggered:false,
+        clientConfirmed:false,
         orderGenerationTriggered:true,
         findingDriverTriggered:false,
         driverFoundTriggered:true,

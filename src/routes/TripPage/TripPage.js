@@ -10,6 +10,7 @@ import DriverFound from "../../components/DriverFound/DriverFound";
 import InTrip from "../../components/InTrip/InTrip";
 import TripFinished from "../../components/TripFinished/TripFinished";
 import ConfirmTripEnd from "../../components/ConfirmTripEnd/ConfirmTripEnd";
+import RideShare from '../../components/RideShare/RideShare'
 class TripPage extends React.Component {
   constructor(props) {
     super(props);
@@ -30,36 +31,43 @@ class TripPage extends React.Component {
           } else if (this.props.navigator.findingDriverTriggered) {
             return (
               <div>
-                <SideMenu />
+                {/* <SideMenu /> */}
                 <FindingDriver />
               </div>
             );
           } else if (this.props.navigator.driverFoundTriggered) {
             return (
               <div>
-                <SideMenu />
+                {/* <SideMenu /> */}
                 <DriverFound />
               </div>
             );
           } else if (this.props.navigator.inTripTriggered) {
             return (
               <div>
-                <SideMenu />
+                {/* <SideMenu /> */}
                 <InTrip />
               </div>
             );
           } else if (this.props.navigator.confirmTripEndTriggered) {
             return (
               <div>
-                <SideMenu />
+                {/* <SideMenu /> */}
                 <ConfirmTripEnd />
               </div>
             );
           } else if (this.props.navigator.tripFinishedTriggered) {
             return (
               <div>
-                <SideMenu />
+                {/* <SideMenu /> */}
                 <TripFinished />
+              </div>
+            );
+          }else if (this.props.navigator.rideShareTriggered) {
+            return (
+              <div>
+                {/* <SideMenu /> */}
+                <RideShare/>
               </div>
             );
           }
@@ -70,6 +78,7 @@ class TripPage extends React.Component {
         {/* <InTrip/> */}
         {/* <TripFinished/> */}
         {/* <ConfirmTripEnd/> */}
+        {/* <RideShare/> */}
         <div className={styles.map__container}>
           <MapComponent />
         </div>

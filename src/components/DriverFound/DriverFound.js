@@ -89,8 +89,20 @@ class DriverFound extends React.Component {
                 onChange={this.onEndChange}
               />
             </div>
-            <div className={styles.redirection__button} onClick={()=> window.open("http://api.map.baidu.com/direction?origin=latlng:34.264642646862,108.95108518068|name:我家&destination=大雁塔&mode=driving&region=西安&output=html&src=webapp.baidu.openAPIdemo", "_blank")}/>
-            <div className={styles.status__icon}/>
+            <div
+              className={styles.redirection__button}
+              onClick={() =>
+                window.open(
+                  `http://api.map.baidu.com/direction?origin=${
+                    this.props.driverStatus.currentOrder.startTitle
+                  }&destination=${
+                    this.props.driverStatus.currentOrder.endTitle
+                  }&mode=driving&region=成都&output=html&src=webapp.dada.testdemo`,
+                  "_blank"
+                )
+              }
+            />
+            <div className={styles.status__icon} />
           </div>
         </div>
       </div>

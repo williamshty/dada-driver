@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "dva";
-import styles from "./InTrip.css";
+import styles from "./RideShare.css";
 import SearchItem from "../Forms/SearchItem";
-class InTrip extends React.Component {
+class RideShare extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -15,9 +15,10 @@ class InTrip extends React.Component {
       <div>
         <div className={styles.bottom__container}>
           <div className={styles.bottom__trip__card}>
-            <div className={styles.bottom__trip__title}>行程中</div>
+            <div className={styles.bottom__card__corner__icon} />
+            <div className={styles.bottom__trip__title}>发现拼单乘客</div>
             <div className={styles.bottom__trip__info}>
-              已接到乘客，前往目的地时请注意安全
+              请您确认是否接下本次拼单
             </div>
             <img
               className={styles.divider__title}
@@ -27,7 +28,7 @@ class InTrip extends React.Component {
               <SearchItem
                 placeholder=""
                 iconColor="#1ad371"
-                value={this.props.driverStatus.currentOrder.startTitle}
+                value={this.props.driverStatus.shareOrder.startTitle}
                 onChange={this.onStartChange}
               />
             </div>
@@ -35,25 +36,12 @@ class InTrip extends React.Component {
               <SearchItem
                 placeholder=""
                 iconColor="#ff0000"
-                value={this.props.driverStatus.currentOrder.endTitle}
+                value={this.props.driverStatus.shareOrder.endTitle}
                 onChange={this.onEndChange}
               />
             </div>
-            <div
-              className={styles.redirection__button}
-              onClick={() =>
-                window.open(
-                  `http://api.map.baidu.com/direction?origin=${
-                    this.props.driverStatus.currentOrder.startTitle
-                  }&destination=${
-                    this.props.driverStatus.currentOrder.endTitle
-                  }&mode=driving&region=成都&output=html&src=webapp.dada.testdemo`,
-                  "_blank"
-                )
-              }
-            />
-            <div className={styles.status__icon} />
-            <div className={styles.confirm__button}/>
+            <div className={styles.reject__button}>拒绝</div>
+            <div className={styles.accept__button}>拼单</div>
           </div>
         </div>
       </div>
@@ -61,10 +49,10 @@ class InTrip extends React.Component {
   }
 }
 
-InTrip.propTypes = {};
+RideShare.propTypes = {};
 
 function mapStateToProps(state) {
   return state;
 }
 
-export default connect(mapStateToProps)(InTrip);
+export default connect(mapStateToProps)(RideShare);

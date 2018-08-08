@@ -12,7 +12,8 @@ export default {
       evaluationFailed:false,
       verifyIp:false,
       verifyFailed:false,
-      currentOrder:{}
+      currentOrder:{},
+      shareOrder:{}
     },
   
     subscriptions: {

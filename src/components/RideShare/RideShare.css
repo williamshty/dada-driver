@@ -2,7 +2,7 @@
     position: absolute;
     z-index: 2000;
     width:100%;
-    height: 160px;
+    height: 204px;
     /* margin-top: 478px; */
     font-family: 'PingFang-SC-Medium';
     /* background-color: black; */
@@ -10,7 +10,7 @@
 }
 .bottom__trip__card{
     width: 100%;
-    height: 160px;
+    height: 181.5px;
     /* margin-left: 11px; */
     /* border-radius: 5px; */
     background-color: #fff;
@@ -30,6 +30,16 @@
     margin-top: 59px;
     color: #333333;
     font-size: 12px;
+}
+.bottom__card__corner__icon{
+    margin-top: 34.5px;
+    margin-left: 298px;
+    width:32px;
+    height: 32px;
+    position: absolute;
+    background-color: #000;
+    /* background: url('../../assets/call_driver.png') no-repeat; */
+    /* background-size: contain; */
 }
 .bottom__distance__title{
     position: absolute;
@@ -81,8 +91,8 @@
     /* padding: 0; */
     position: absolute;
     /* margin-top:11.5px;  */
-  }
-  .start__search__container {
+}
+.start__search__container {
     position: absolute;
     margin-top: 105.5px;
     margin-left: 4px;
@@ -93,33 +103,34 @@
     margin-top: 129px;
     margin-left: 4px;
 }
-.redirection__button{
+.reject__button{
     position: absolute;
-    width: 60.5px;
-    height: 36px;
-    margin-top: 105.5px;
-    margin-left: 285px;
-    background-image: url('../../assets/redirect_navigation.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+    margin-left: 11px;
+    margin-top: 159.5px;
+    width: 168.5px;
+    height: 44px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.12);
+    background-color: #fff;
+    /* background-image: linear-gradient(to right, #ffbc3b 0%,#ffa632 100%); */
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 14.5px;
 }
-.status__icon{
+.accept__button{
     position: absolute;
-    width: 32.5px;
-    height: 32.5px;
-    margin-top: 34.5px;
-    margin-left: 298.5px;
-    background-image: url('../../assets/in_trip.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.confirm__button{
-    position: absolute;
-    z-index: 2;
-    width: 64px;
-    height: 64px;
-    margin-left: 20px;
-    margin-top: 589.5px;
-    background-image: url('../../assets/button_menu.png');
-    background-size: contain;
+    margin-left: 195.5px;
+    margin-top: 159.5px;
+    width: 168.5px;
+    height: 44px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.12);
+    background-image: linear-gradient(to right, #ffbc3b 0%,#ffa632 100%);
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 14.5px;
 }
