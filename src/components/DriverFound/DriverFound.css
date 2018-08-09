@@ -142,3 +142,23 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
+.confirm__button{
+    position: absolute;
+    z-index: 2;
+    width: 64px;
+    height: 64px;
+    margin-left: 20px;
+    margin-top: 589.5px;
+    background-image: url('../../assets/client_in.png');
+    background-size: contain;
+}
+.call__button{
+    position: absolute;
+    z-index: 2;
+    width: 64px;
+    height: 64px;
+    margin-left: 291px;
+    margin-top: 589.5px;
+    background-image: url('../../assets/call_client.png');
+    background-size: contain;
+}

@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import dva from "dva";
 import "./index.css";
 var currentLocation = { lng: 104.06756279999999, lat: 30.551020799999996 };
@@ -9,12 +10,12 @@ const app = dva({
   initialState: {
     navigator: {
       sideMenuOpen: false,
-      orderGenerationTriggered: false,
+      orderGenerationTriggered: true,
       driverFoundTriggered: false,
       inTripTriggered: false,
       rideShareTriggered: false,
-      confirmTripEndTriggered: true,
-      clientConfirmed: true,
+      confirmTripEndTriggered: false,
+      clientConfirmed: false,
       isLoggedIn: false
     },
     mapData: {
@@ -47,7 +48,8 @@ const app = dva({
         time: "1h 12min",
         price: "13.70",
         distance: "12",
-        pax: "2"
+        pax: "2",
+        clientTel: "13840243280"
       },
       shareOrder: {
         startTitle: "share锦江瑞康医院",
@@ -61,7 +63,8 @@ const app = dva({
         time: "1h 12min",
         price: "13.70",
         distance: "12",
-        pax: "2"
+        pax: "2",
+        clientTel: "13840243280"
       }
     }
   }

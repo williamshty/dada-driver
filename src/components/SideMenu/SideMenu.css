@@ -135,6 +135,7 @@ to {top:0px;}
  height: 667px;
  position: relative;
  z-index: -2;
+ font-family: "PingFang-SC-Medium";
  /* background-color: #2b71db; */
 }
 .sidebar__mask {

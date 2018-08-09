@@ -113,13 +113,13 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
-.confirm__button{
+.end__button{
     position: absolute;
     z-index: 2;
     width: 64px;
     height: 64px;
     margin-left: 20px;
     margin-top: 589.5px;
-    background-image: url('../../assets/button_menu.png');
+    background-image: url('../../assets/trip_end.png');
     background-size: contain;
 }

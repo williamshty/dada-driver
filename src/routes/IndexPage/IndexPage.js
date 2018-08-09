@@ -5,10 +5,12 @@ import { routerRedux } from "dva/router";
 import DriverCard from "../../components/DriverCard/DriverCard";
 import SideMenu from "../../components/SideMenu/SideMenu";
 import OrderCard from "../../components/OrderCard/OrderCard";
+import {socketConnect} from '../../utils/socket';
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      socketTest :'hi',
       opened: false,
       closed: false,
       fillEmpty: false,
@@ -65,6 +67,7 @@ class IndexPage extends React.Component {
   }
   componentDidMount() {
     console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+    // socketConnect((err,socketTest)=>{console.log(socketTest)})
   }
   toggleClose() {
     this.props.dispatch({

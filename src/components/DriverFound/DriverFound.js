@@ -3,6 +3,7 @@ import { connect } from "dva";
 import styles from "./DriverFound.css";
 import CustomModal from "../Modals/CustomModal";
 import SearchItem from "../Forms/SearchItem";
+import { routerRedux } from "dva/router";
 class DriverFound extends React.Component {
   constructor(props) {
     super(props);
@@ -42,6 +43,16 @@ class DriverFound extends React.Component {
                     cancelConfirmationActivated: false,
                     cancelConfirmed: true
                   });
+                  setTimeout(() => {
+                    this.props.dispatch({
+                      type: "navigator/save",
+                      payload: {
+                        driverFoundTriggered: false,
+                        orderGenerationTriggered:true
+                      }
+                    });
+                    this.props.dispatch(routerRedux.push({ pathname: "/" }));
+                  }, 1000);
                 }}
               />
             );
@@ -93,16 +104,31 @@ class DriverFound extends React.Component {
               className={styles.redirection__button}
               onClick={() =>
                 window.open(
-                  `http://api.map.baidu.com/direction?origin=${
+                  `http://api.map.baidu.com/direction?origin=latlng:${
+                    this.props.mapData.currentLocation.lat
+                  },${this.props.mapData.currentLocation.lng}
+                  |name:我的位置&destination=${
                     this.props.driverStatus.currentOrder.startTitle
-                  }&destination=${
-                    this.props.driverStatus.currentOrder.endTitle
                   }&mode=driving&region=成都&output=html&src=webapp.dada.testdemo`,
                   "_blank"
                 )
               }
             />
             <div className={styles.status__icon} />
+            <div
+              className={styles.confirm__button}
+              onClick={() =>
+                this.props.dispatch({
+                  type: "navigator/save",
+                  payload: {
+                    driverFoundTriggered: false,
+                    inTripTriggered: true
+                  }
+                })
+              }
+            />
+            <a href={`tel:${this.props.driverStatus.currentOrder.clientTel}`}>
+            <div className={styles.call__button} /></a>
           </div>
         </div>
       </div>

@@ -51,7 +51,7 @@ class SideMenu extends React.Component {
         </div>
         <Drawer
           className="my-drawer"
-          style={{ minHeight: document.documentElement.clientHeight, fontSize: 10 }}
+          style={{ minHeight: document.documentElement.clientHeight, fontSize: 10, height:707 }}
           contentStyle={{ color: '#A6A6A6', textAlign: 'center' }}
           sidebar={sidebar}
           open={this.props.navigator.sideMenuOpen}

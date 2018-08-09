@@ -1,7 +1,9 @@
 import React from "react";
+import Lottie from 'react-lottie';
 import { connect } from "dva";
 import styles from "./ConfirmTripEnd.css";
 import { routerRedux } from "dva/router";
+import * as coinAnimData from '../../assets/anim/coin.json'
 class ConfirmTripEnd extends React.Component {
   constructor(props) {
     super(props);
@@ -19,9 +21,30 @@ class ConfirmTripEnd extends React.Component {
   componentWillUnmount() {}
 
   render() {
+    const defaultOptions = {
+      loop: false,
+      autoplay: true, 
+      animationData: coinAnimData,
+      rendererSettings: {
+        scaleMode: 'noScale',
+        clearCanvas: false,
+        progressiveLoad: false, // Boolean, only svg renderer, loads dom elements when needed. Might speed up initialization for large number of elements.
+        hideOnTransparent: true //Boolean, only svg renderer, hides elements when opacity reaches 0 (defaults to true)
+      }
+    };
     return (
       <div>
-        {/* <div className={styles.bottom__background__mask}></div> */}
+        <div className={styles.bottom__background__mask}>
+        {(() => {
+          if (this.props.navigator.clientConfirmed) {
+       return  <Lottie options={defaultOptions}
+       height={667}
+       width={375}
+       />
+                }
+              })()}
+        </div>
+        
         <div className={styles.bottom__container}>
           <div className={styles.bottom__confirm__card}>
             <div className={styles.bottom__card__title}>行程完成</div>
@@ -62,7 +85,8 @@ class ConfirmTripEnd extends React.Component {
                     乘客已确认本次行程完成，金额已结算
                   </div>
                   <div className={styles.pop__price}>+16.67 NAS</div>
-                  <div className={styles.pop__icon} />
+                  <div className={styles.pop__icon}>
+                  </div>
                 </div>
                 <div
                   className={styles.button__confirm}
@@ -70,7 +94,8 @@ class ConfirmTripEnd extends React.Component {
                     this.props.dispatch({
                       type: "navigator/save",
                       payload: {
-                        confirmTripEndTriggered: false
+                        confirmTripEndTriggered: false,
+                        orderGenerationTriggered:true
                       }
                     });
                     this.props.dispatch(routerRedux.push({ pathname: "/" }));

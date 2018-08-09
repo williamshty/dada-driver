@@ -1,7 +1,7 @@
 {
-    "start_url": "/",
-    "name": "搭搭拼车",
-    "short_name": "DADA",
+    "start_url": "/trip",
+    "name": "搭搭拼车-司机客户端",
+    "short_name": "搭搭司机",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#7b4397",

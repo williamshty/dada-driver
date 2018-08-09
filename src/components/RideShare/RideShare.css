@@ -7,6 +7,14 @@
     font-family: 'PingFang-SC-Medium';
     /* background-color: black; */
     font-weight: 400;
+    animation: container-drop .8s;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease-out;
+}
+@keyframes container-drop
+{
+from {top:-204px;}
+to {top:0%;}
 }
 .bottom__trip__card{
     width: 100%;
@@ -37,9 +45,9 @@
     width:32px;
     height: 32px;
     position: absolute;
-    background-color: #000;
-    /* background: url('../../assets/call_driver.png') no-repeat; */
-    /* background-size: contain; */
+    /* background-color: #000; */
+    background: url('../../assets/ride_share.png') no-repeat;
+    background-size: contain;
 }
 .bottom__distance__title{
     position: absolute;

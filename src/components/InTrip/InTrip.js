@@ -53,7 +53,18 @@ class InTrip extends React.Component {
               }
             />
             <div className={styles.status__icon} />
-            <div className={styles.confirm__button}/>
+            <div
+              className={styles.end__button}
+              onClick={() =>
+                this.props.dispatch({
+                  type: "navigator/save",
+                  payload: {
+                    confirmTripEndTriggered: true,
+                    inTripTriggered: false
+                  }
+                })
+              }
+            />
           </div>
         </div>
       </div>
