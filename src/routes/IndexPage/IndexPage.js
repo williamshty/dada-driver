@@ -65,9 +65,9 @@ class IndexPage extends React.Component {
       ]
     };
   }
-  componentDidMount() {
+  componentWillMount() {
     console.log("process.env.NODE_ENV", process.env.NODE_ENV);
-    // socketConnect((err,socketTest)=>{console.log(socketTest)})
+    socketConnect((err,socketTest)=>{console.log(socketTest)})
   }
   toggleClose() {
     this.props.dispatch({

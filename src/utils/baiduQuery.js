@@ -1,4 +1,5 @@
 import axios from 'axios'
+import fetchJSONP from 'fetch-jsonp'
 import {ak, amap_key} from './keys'
 console.log(ak)
 console.log(amap_key)
@@ -20,8 +21,15 @@ export async function getEstimatedRoute(start,end){
     return resp.data.route
 }
 export async function loadBaiduCoords(param){
-    console.log(`https://api.map.baidu.com/geoconv/v1/?coords=${param.lat},${param.lng}&from=1&to=5&ak=${ak}`)
-    let resp = await axios
-    .get(`https://api.map.baidu.com/geoconv/v1/?coords=${param.lat},${param.lng}&from=1&to=5&ak=${ak}`);
-    return resp.data.result[0]
+    // console.log(`https://api.map.baidu.com/geoconv/v1/?coords=${param.lat},${param.lng}&from=1&to=5&ak=${ak}`)
+    // let resp = await axios
+    // .get(`https://api.map.baidu.com/geoconv/v1/?coords=${param.lat},${param.lng}&from=1&to=5&ak=${ak}&callback=logReturnedResult`);
+    // return resp.data.result[0]
+
+    let resp  = await fetchJSONP(`https://api.map.baidu.com/geoconv/v1/?coords=${param.lat},${param.lng}&from=1&to=5&ak=${ak}`)
+    return resp.json()
+
 }
+// function logReturnedResult(result){
+//     console.log(result)
+// }
