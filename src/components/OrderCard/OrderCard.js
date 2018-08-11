@@ -28,19 +28,36 @@ class OrderCard extends React.Component {
             起点
             </div>
             <div className={styles.start__title}>
-            {this.state.startTitle}
+            {(() => {
+            if(this.state.startTitle.length>12){
+              return <span>{this.state.startTitle.substr(0,12)}...</span>
+            } else return <span>{this.state.startTitle}</span>
+            })()}
             </div>
             <div className={styles.start__info}>
-            {this.state.startInfo}
+            {(() => {
+            if(this.state.startInfo.length>13){
+              return <span>{this.state.startInfo.substr(0,13)}...</span>
+            } else return <span>{this.state.startInfo}</span>
+            })()}
             </div>
             <div className={styles.end__caption}>
             终点
             </div>
             <div className={styles.end__title}>
-            {this.state.endTitle}
+            {(() => {
+            if(this.state.endTitle.length>12){
+              return <span>{this.state.endTitle.substr(0,12)}...</span>
+            } else return <span>{this.state.endTitle}</span>
+            })()}
             </div>
             <div className={styles.end__info}>
-            {this.state.endInfo}
+            {(() => {
+            if(this.state.endInfo.length>13){
+              return <span>{this.state.endInfo.substr(0,13)}...</span>
+            } else return <span>{this.state.endInfo}</span>
+            })()}
+            
             </div>
             <div className={styles.time__stamp}>
             {this.state.time}

@@ -29,10 +29,11 @@ class IndexPage extends React.Component {
           endInfo: "四川省成都市武侯区天府三街",
           endLat: "104.077183",
           endLng: "30.555715",
-          time: "1h 12min",
+          duration: "1h 12min",
           price: "13.70",
           distance: "12",
-          pax: "2"
+          pax: "2",
+          clientTel: "13840243280"
         },
         {
           startTitle: "锦江瑞康医院",
@@ -43,31 +44,35 @@ class IndexPage extends React.Component {
           endInfo: "四川省成都市武侯区天府三街",
           endLat: "104.077183",
           endLng: "30.555715",
-          time: "2h 12min",
-          price: "1.37",
-          distance: "14",
-          pax: "1"
+          duration: "1h 12min",
+          price: "13.70",
+          distance: "12",
+          pax: "2",
+          clientTel: "13840243280"
         },
         {
-          startTitle: "锦江瑞康医院",
-          startInfo: "成都市成华区牛市口",
+          startTitle: "锦江瑞康医院锦江瑞康医院江瑞康医江瑞康医",
+          startInfo: "成都市成华区牛市口成华区牛市口成华区牛市口",
           startLat: "104.124269",
           startLng: "30.606301",
-          endTitle: "天府软件园A区",
-          endInfo: "四川省成都市武侯区天府三街",
+          endTitle: "天府软件园A区天府软件园A区天府软件园A区",
+          endInfo: "四川省成都市武侯区天府三街成华区牛市口成华区牛市口成华区牛市口",
           endLat: "104.077183",
           endLng: "30.555715",
-          time: "1h 24min",
-          price: "23",
-          distance: "1",
-          pax: "1"
+          duration: "1h 12min",
+          price: "13.70",
+          distance: "12",
+          pax: "2",
+          clientTel: "13840243280"
         }
       ]
     };
   }
   componentWillMount() {
     console.log("process.env.NODE_ENV", process.env.NODE_ENV);
-    socketConnect((err,socketTest)=>{console.log(socketTest)})
+    socketConnect((err,socketTest)=>{
+      this.setState({mockOrderData:[...this.state.mockOrderData,socketTest]})
+    })
   }
   toggleClose() {
     this.props.dispatch({
@@ -174,7 +179,7 @@ class IndexPage extends React.Component {
                             startInfo={order.startInfo}
                             endTitle={order.endTitle}
                             endInfo={order.endInfo}
-                            time={order.time}
+                            time={order.duration}
                             price={order.price}
                           />
                         </div>
@@ -309,18 +314,7 @@ class IndexPage extends React.Component {
       </div>
     );
   }
-  // render(){
-  //   return(
-  //     <OrderCard
-  //     startTitle='锦江瑞康医院'
-  //     startInfo='成都市成华区牛市口'
-  //     endTitle='天府软件园A区'
-  //     endInfo='四川省成都市武侯区天府三街'
-  //     time='1h 12min'
-  //     price='13.70'
-  //     />
-  //   )
-  // }
+
 }
 
 IndexPage.propTypes = {};
