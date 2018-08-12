@@ -101,7 +101,8 @@ class ConfirmTripEnd extends React.Component {
                       type: "navigator/save",
                       payload: {
                         confirmTripEndTriggered: false,
-                        orderGenerationTriggered: true
+                        orderGenerationTriggered: true,
+                        clientConfirmed:false
                       }
                     });
                     this.props.dispatch(routerRedux.push({ pathname: "/" }));
