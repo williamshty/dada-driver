@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "dva";
 import styles from "./InTrip.css";
 import SearchItem from "../Forms/SearchItem";
+import {confirmTripEnd} from '../../utils/webServices'
 class InTrip extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +10,26 @@ class InTrip extends React.Component {
   }
   componentDidMount() {}
   componentWillUnmount() {}
-
+  async confirmTripEndFunction(){
+    const trip_end = await confirmTripEnd({
+      _id: this.props.driverStatus.currentOrder.id,
+      time: Date.now()
+    })
+    console.log(trip_end)
+    this.props.dispatch({
+      type:'driverStatus/save',
+      payload:{
+        tripFinished:trip_end.data.data
+      }
+    })
+    this.props.dispatch({
+      type: "navigator/save",
+      payload: {
+        confirmTripEndTriggered: true,
+        inTripTriggered: false
+      }
+    })
+  }
   render() {
     return (
       <div>
@@ -56,13 +76,9 @@ class InTrip extends React.Component {
             <div
               className={styles.end__button}
               onClick={() =>
-                this.props.dispatch({
-                  type: "navigator/save",
-                  payload: {
-                    confirmTripEndTriggered: true,
-                    inTripTriggered: false
-                  }
-                })
+                {
+                  this.confirmTripEndFunction()
+                }
               }
             />
           </div>

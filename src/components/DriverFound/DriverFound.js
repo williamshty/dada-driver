@@ -4,6 +4,7 @@ import styles from "./DriverFound.css";
 import CustomModal from "../Modals/CustomModal";
 import SearchItem from "../Forms/SearchItem";
 import { routerRedux } from "dva/router";
+import { collectClient } from "../../utils/webServices";
 class DriverFound extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +22,13 @@ class DriverFound extends React.Component {
   //     }
   //   })}, 4000)
   // }
-
+  async collectClientFunction() {
+    const client_collected = await collectClient({
+      _id: this.props.driverStatus.currentOrder.id,
+      time: Date.now()
+    });
+    console.log(client_collected);
+  }
   render() {
     return (
       <div>
@@ -48,7 +55,7 @@ class DriverFound extends React.Component {
                       type: "navigator/save",
                       payload: {
                         driverFoundTriggered: false,
-                        orderGenerationTriggered:true
+                        orderGenerationTriggered: true
                       }
                     });
                     this.props.dispatch(routerRedux.push({ pathname: "/" }));
@@ -117,18 +124,20 @@ class DriverFound extends React.Component {
             <div className={styles.status__icon} />
             <div
               className={styles.confirm__button}
-              onClick={() =>
+              onClick={() => {
+                this.collectClientFunction();
                 this.props.dispatch({
                   type: "navigator/save",
                   payload: {
                     driverFoundTriggered: false,
                     inTripTriggered: true
                   }
-                })
-              }
+                });
+              }}
             />
             <a href={`tel:${this.props.driverStatus.currentOrder.clientTel}`}>
-            <div className={styles.call__button} /></a>
+              <div className={styles.call__button} />
+            </a>
           </div>
         </div>
       </div>

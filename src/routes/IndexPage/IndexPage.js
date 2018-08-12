@@ -5,7 +5,7 @@ import { routerRedux } from "dva/router";
 import DriverCard from "../../components/DriverCard/DriverCard";
 import SideMenu from "../../components/SideMenu/SideMenu";
 import OrderCard from "../../components/OrderCard/OrderCard";
-import {socketConnect} from '../../utils/socket';
+import {openAndReceivingOrder, updateLocation, clientConfirmed} from '../../utils/socket';
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
@@ -18,61 +18,34 @@ class IndexPage extends React.Component {
       evaluationIp: false,
       evaluationFailed: false,
       verifyIp: false,
-      verifyFailed: false,
-      mockOrderData: [
-        {
-          startTitle: "锦江瑞康医院",
-          startInfo: "成都市成华区牛市口",
-          startLat: "104.124269",
-          startLng: "30.606301",
-          endTitle: "天府软件园A区",
-          endInfo: "四川省成都市武侯区天府三街",
-          endLat: "104.077183",
-          endLng: "30.555715",
-          duration: "1h 12min",
-          price: "13.70",
-          distance: "12",
-          pax: "2",
-          clientTel: "13840243280"
-        },
-        {
-          startTitle: "锦江瑞康医院",
-          startInfo: "成都市成华区牛市口",
-          startLat: "104.124269",
-          startLng: "30.606301",
-          endTitle: "天府软件园A区",
-          endInfo: "四川省成都市武侯区天府三街",
-          endLat: "104.077183",
-          endLng: "30.555715",
-          duration: "1h 12min",
-          price: "13.70",
-          distance: "12",
-          pax: "2",
-          clientTel: "13840243280"
-        },
-        {
-          startTitle: "锦江瑞康医院锦江瑞康医院江瑞康医江瑞康医",
-          startInfo: "成都市成华区牛市口成华区牛市口成华区牛市口",
-          startLat: "104.124269",
-          startLng: "30.606301",
-          endTitle: "天府软件园A区天府软件园A区天府软件园A区",
-          endInfo: "四川省成都市武侯区天府三街成华区牛市口成华区牛市口成华区牛市口",
-          endLat: "104.077183",
-          endLng: "30.555715",
-          duration: "1h 12min",
-          price: "13.70",
-          distance: "12",
-          pax: "2",
-          clientTel: "13840243280"
-        }
-      ]
+      verifyFailed: false
     };
   }
   componentWillMount() {
-    console.log("process.env.NODE_ENV", process.env.NODE_ENV);
-    socketConnect((err,socketTest)=>{
-      this.setState({mockOrderData:[...this.state.mockOrderData,socketTest]})
+    localStorage.setItem('driverID','5b5940e60db7b95f182204ad')
+    // console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+    openAndReceivingOrder((err,socketTest)=>{
+      this.props.dispatch({
+        type:'driverStatus/save',
+        payload:{
+          orderList:[...this.props.driverStatus.orderList,socketTest]
+        }
+      })
     })
+    updateLocation(this.props.mapData.currentLocation)
+    clientConfirmed((err,clientConfirmed)=>{
+      console.log(clientConfirmed)
+      this.props.dispatch({
+        type:'navigator/save',
+        payload:{
+          clientConfirmed:true
+        }
+      })
+    })
+    // setInterval(()=>{
+    //   console.log(this.props.mapData.currentLocation)
+    //   updateLocation(this.props.mapData.currentLocation)
+    // },3000)
   }
   toggleClose() {
     this.props.dispatch({
@@ -158,7 +131,7 @@ class IndexPage extends React.Component {
                 return (
                   <div className={styles.driver__order__list}>
                     {(() => {
-                      return this.state.mockOrderData.map(order => (
+                      return this.props.driverStatus.orderList.map(order => (
                         <div
                           key={Math.random()}
                           className={styles.driver__order__item}

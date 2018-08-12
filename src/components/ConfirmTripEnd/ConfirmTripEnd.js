@@ -55,11 +55,17 @@ class ConfirmTripEnd extends React.Component {
               src={require("../../assets/矩形 609.png")}
             />
             <div className={styles.bottom__distance__title}>路程</div>
-            <div className={styles.bottom__distance}>42 Km</div>
+            <div className={styles.bottom__distance}>
+              {this.props.driverStatus.tripFinished.distance} Km
+            </div>
             <div className={styles.bottom__pax__title}>拼车人数</div>
-            <div className={styles.bottom__pax}>2 人</div>
+            <div className={styles.bottom__pax}>
+              {this.props.driverStatus.tripFinished.pax} 人
+            </div>
             <div className={styles.bottom__time__title}>时间</div>
-            <div className={styles.bottom__time}>48 Min</div>
+            <div className={styles.bottom__time}>
+              {this.props.driverStatus.tripFinished.duration} Min
+            </div>
             <div className={styles.end__icon} />
           </div>
         </div>
@@ -83,7 +89,9 @@ class ConfirmTripEnd extends React.Component {
                   <div className={styles.pop__info}>
                     乘客已确认本次行程完成，金额已结算
                   </div>
-                  <div className={styles.pop__price}>+16.67 NAS</div>
+                  <div className={styles.pop__price}>
+                    +{this.props.driverStatus.tripFinished.price} NAS
+                  </div>
                   <div className={styles.pop__icon} />
                 </div>
                 <div

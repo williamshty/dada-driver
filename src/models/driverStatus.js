@@ -13,7 +13,9 @@ export default {
       verifyIp:false,
       verifyFailed:false,
       currentOrder:{},
-      shareOrder:{}
+      shareOrder:{},
+      orderList:[],
+      tripFinished:{}
     },
   
     subscriptions: {

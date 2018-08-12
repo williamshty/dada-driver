@@ -10,6 +10,7 @@ import {
   searchLocation,
   getEstimatedRoute
 } from "../../utils/baiduQuery";
+import { acceptOrder, verifyOrder } from "../../utils/webServices";
 import OrderPriceForm from "../Forms/OrderPriceForm";
 import SearchItem from "../Forms/SearchItem";
 import SearchListItem from "../SearchListItem/SearchListItem";
@@ -84,6 +85,21 @@ class OrderGeneration extends React.Component {
     this.setState({
       locationHintList: result
     });
+  }
+  async acceptOrderFunction() {
+    console.log('accept order triggered')
+    const order_status = await verifyOrder(
+      this.props.driverStatus.currentOrder.id
+    );
+    console.log(order_status);
+    if(order_status.data.data){
+      const order_accepted = await acceptOrder({
+        driver: localStorage.getItem("driverID"),
+        _id: this.props.driverStatus.currentOrder.id,
+        time: Date.now()
+      });
+      console.log(order_accepted);
+    }
   }
   onStartChange = value => {
     this.setState({
@@ -175,39 +191,52 @@ class OrderGeneration extends React.Component {
               <div className={styles.top__info__container}>
                 <div className={styles.bottom__distance__text}>预计路程</div>
                 <div className={styles.bottom__distance__number}>
-                  {this.props.driverStatus.currentOrder.distance}&nbsp;
+                  {this.props.driverStatus.currentOrder.distance}
+                  &nbsp;
                   <span className={styles.bottom__distance__unit}>Km</span>
                 </div>
                 <div className={styles.bottom__pax__text}>人数</div>
                 <div className={styles.bottom__pax__number}>
-                  {this.props.driverStatus.currentOrder.pax}&nbsp;
+                  {this.props.driverStatus.currentOrder.pax}
+                  &nbsp;
                   <span className={styles.bottom__pax__unit}>人</span>
                 </div>
                 <div className={styles.bottom__time__text}>预计时间</div>
                 <div className={styles.bottom__time__number}>
-                  {this.props.driverStatus.currentOrder.time}
+                  {this.props.driverStatus.currentOrder.duration}
                 </div>
               </div>
               <div className={this.getBottomContainerClass()}>
                 <div className={styles.bottom__rider__container}>
                   <div className={styles.price__text}>本单金额</div>
                   <div className={styles.price}>
-                    {this.props.driverStatus.currentOrder.price}&nbsp;NAS
+                    {this.props.driverStatus.currentOrder.price}
+                    &nbsp;NAS
                   </div>
                 </div>
                 <div
                   className={styles.bottom__rider__submit}
-                  onClick={() =>
+                  onClick={()=>{
+                    this.acceptOrderFunction()
                     this.props.dispatch({
                       type: "navigator/save",
                       payload: {
                         orderGenerationTriggered: false,
                         driverFoundTriggered: true
                       }
-                    })
-                  }
+                    });
+                  }}
                 >
                   抢单
+                  {/* {() => {
+                    this.props.dispatch({
+                      type: "navigator/save",
+                      payload: {
+                        orderGenerationTriggered: false,
+                        driverFoundTriggered: true
+                      }
+                    });
+                  }} */}
                 </div>
               </div>
             </div>
