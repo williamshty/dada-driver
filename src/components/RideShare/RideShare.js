@@ -2,14 +2,68 @@ import React from "react";
 import { connect } from "dva";
 import styles from "./RideShare.css";
 import SearchItem from "../Forms/SearchItem";
+import { acceptOrder, verifyOrder } from "../../utils/webServices";
 class RideShare extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      showOrderTakeFailure:false
+    };
   }
   componentDidMount() {}
   componentWillUnmount() {}
-
+  backToTrip(){
+    this.props.dispatch({
+      type:'navigator/save',
+      payload:{
+        rideShareTriggered:false
+      }
+    })
+  }
+  async acceptOrderFunction() {
+    console.log('accept order triggered')
+    const order_status = await verifyOrder(
+      this.props.driverStatus.shareOrder.id
+    );
+    console.log(order_status);
+    if(order_status.data.data){
+      const order_accepted = await acceptOrder({
+        driver: localStorage.getItem("driverID"),
+        _id: this.props.driverStatus.shareOrder.id,
+        time: Date.now()
+      });
+      console.log(order_accepted);
+      this.props.dispatch({
+        type:"driverStatus/save",
+        payload:{
+          inShareOrder:true,
+          firstOrder:this.props.driverStatus.currentOrder,
+          secondOrder:this.props.driverStatus.shareOrder,
+          currentOrder:this.props.driverStatus.shareOrder
+        }
+      })
+      this.props.dispatch({
+        type: "navigator/save",
+        payload: {
+          orderGenerationTriggered: false,
+          driverFoundTriggered: true,
+          rideShareTriggered:false
+        }
+      });
+    }
+    else {
+      this.setState({showOrderTakeFailure:true})
+      setTimeout(()=>{
+        this.props.dispatch({
+          type: "navigator/save",
+          payload: {
+            rideShareTriggered:false
+          }
+        })
+        // this.props.dispatch(routerRedux.push({ pathname: "/" }));
+      },2000)
+    }
+  }
   render() {
     return (
       <div>
@@ -40,8 +94,16 @@ class RideShare extends React.Component {
                 onChange={this.onEndChange}
               />
             </div>
-            <div className={styles.reject__button}>拒绝</div>
-            <div className={styles.accept__button}>拼单</div>
+            <div className={styles.reject__button}
+            onClick={()=>{
+              this.backToTrip()
+            }}
+            >拒绝</div>
+            <div className={styles.accept__button} onClick={
+            ()=>{
+              this.acceptOrderFunction()
+            }
+            }>拼单</div>
           </div>
         </div>
       </div>

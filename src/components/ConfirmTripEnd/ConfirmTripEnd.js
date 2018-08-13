@@ -94,22 +94,55 @@ class ConfirmTripEnd extends React.Component {
                   </div>
                   <div className={styles.pop__icon} />
                 </div>
-                <div
-                  className={styles.button__confirm}
-                  onClick={() => {
-                    this.props.dispatch({
-                      type: "navigator/save",
-                      payload: {
-                        confirmTripEndTriggered: false,
-                        orderGenerationTriggered: true,
-                        clientConfirmed:false
-                      }
-                    });
-                    this.props.dispatch(routerRedux.push({ pathname: "/" }));
-                  }}
-                >
-                  返回接单页
-                </div>
+                {(() => {
+                  if (!this.props.driverStatus.inShareOrder) {
+                    return (
+                      <div
+                        className={styles.button__confirm}
+                        onClick={() => {
+                          this.props.dispatch({
+                            type: "navigator/save",
+                            payload: {
+                              confirmTripEndTriggered: false,
+                              orderGenerationTriggered: true,
+                              clientConfirmed: false
+                            }
+                          });
+                          this.props.dispatch(
+                            routerRedux.push({ pathname: "/" })
+                          );
+                        }}
+                      >
+                        返回接单页
+                      </div>
+                    );
+                  } else {
+                    return(
+                      <div
+                        className={styles.button__confirm}
+                        onClick={() => {
+                          this.props.dispatch({
+                            type: "navigator/save",
+                            payload: {
+                              confirmTripEndTriggered: false,
+                              clientConfirmed: false,
+                              inTripTriggered: true
+                            }
+                          });
+                          this.props.dispatch({
+                            type: "driverStatus/save",
+                            payload: {
+                              inShareOrder: false,
+                              currentOrder: this.props.driverStatus.secondOrder
+                            }
+                          });
+                        }}
+                      >
+                        继续下位乘客
+                      </div>
+                    )
+                  }
+                })()}
               </div>
             );
           }

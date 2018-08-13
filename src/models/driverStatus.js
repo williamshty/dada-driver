@@ -12,10 +12,14 @@ export default {
       evaluationFailed:false,
       verifyIp:false,
       verifyFailed:false,
+      clientIn:false,
       currentOrder:{},
       shareOrder:{},
       orderList:[],
-      tripFinished:{}
+      tripFinished:{},
+      inShareOrder:false,
+      firstOrder:{},
+      secondOrder:{}
     },
   
     subscriptions: {

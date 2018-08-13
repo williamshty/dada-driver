@@ -5,12 +5,16 @@ import { routerRedux } from "dva/router";
 import DriverCard from "../../components/DriverCard/DriverCard";
 import SideMenu from "../../components/SideMenu/SideMenu";
 import OrderCard from "../../components/OrderCard/OrderCard";
-import {openAndReceivingOrder, updateLocation, clientConfirmed} from '../../utils/socket';
+import {
+  openAndReceivingOrder,
+  updateLocation,
+  clientConfirmed
+} from "../../utils/socket";
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      socketTest :'hi',
+      socketTest: "hi",
       opened: false,
       closed: false,
       fillEmpty: false,
@@ -22,30 +26,50 @@ class IndexPage extends React.Component {
     };
   }
   componentWillMount() {
-    localStorage.setItem('driverID','5b5940e60db7b95f182204ad')
+    localStorage.setItem("driverID", "5b5940e60db7b95f182204ad");
     // console.log("process.env.NODE_ENV", process.env.NODE_ENV);
-    openAndReceivingOrder((err,socketTest)=>{
+    updateLocation(this.props.mapData.currentLocation);
+    clientConfirmed((err, clientConfirmed) => {
+      console.log(clientConfirmed);
       this.props.dispatch({
-        type:'driverStatus/save',
-        payload:{
-          orderList:[...this.props.driverStatus.orderList,socketTest]
+        type: "navigator/save",
+        payload: {
+          clientConfirmed: true
         }
-      })
-    })
-    updateLocation(this.props.mapData.currentLocation)
-    clientConfirmed((err,clientConfirmed)=>{
-      console.log(clientConfirmed)
-      this.props.dispatch({
-        type:'navigator/save',
-        payload:{
-          clientConfirmed:true
-        }
-      })
-    })
+      });
+    });
     // setInterval(()=>{
     //   console.log(this.props.mapData.currentLocation)
     //   updateLocation(this.props.mapData.currentLocation)
     // },3000)
+  }
+  componentDidMount(){
+    console.log(this.props.driverStatus.currentOrder)
+    openAndReceivingOrder((err, socketTest) => {
+      if (this.props.driverStatus.clientIn) {
+        console.log(this.props.driverStatus.clientIn)
+        this.props.dispatch({
+          type: "navigator/save",
+          payload: {
+            rideShareTriggered: true
+          }
+        });
+        this.props.dispatch({
+          type: "driverStatus/save",
+          payload: {
+            shareOrder: socketTest
+          }
+        });
+      } else {
+        this.props.dispatch({
+          type: "driverStatus/save",
+          payload: {
+            orderList: [...this.props.driverStatus.orderList, socketTest],
+            clientIn:true
+          }
+        });
+      }
+    });
   }
   toggleClose() {
     this.props.dispatch({
@@ -287,7 +311,6 @@ class IndexPage extends React.Component {
       </div>
     );
   }
-
 }
 
 IndexPage.propTypes = {};

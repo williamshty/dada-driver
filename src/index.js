@@ -83,36 +83,12 @@ const app = dva({
           clientTel: "13840243280"
         }
       ],
-      currentOrder: {
-        startTitle: "锦江瑞康医院",
-        startInfo: "成都市成华区牛市口",
-        startLat: "104.124269",
-        startLng: "30.606301",
-        endTitle: "天府软件园A区",
-        endInfo: "四川省成都市武侯区天府三街",
-        endLat: "104.077183",
-        endLng: "30.555715",
-        duration: "1h 12min",
-        price: "13.70",
-        distance: "12",
-        pax: "2",
-        clientTel: "13840243280"
-      },
-      shareOrder: {
-        startTitle: "share锦江瑞康医院",
-        startInfo: "成都市成华区牛市口",
-        startLat: "104.124269",
-        startLng: "30.606301",
-        endTitle: "天府软件园A区share",
-        endInfo: "四川省成都市武侯区天府三街",
-        endLat: "104.077183",
-        endLng: "30.555715",
-        duration: "1h 12min",
-        price: "13.70",
-        distance: "12",
-        pax: "2",
-        clientTel: "13840243280"
-      }
+      currentOrder: false,
+      shareOrder: false,
+      clientIn:false,
+      inShareOrder:false,
+      firstOrder:{},
+      secondOrder:{}
     }
   }
 });

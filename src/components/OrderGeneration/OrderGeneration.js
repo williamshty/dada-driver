@@ -34,7 +34,8 @@ class OrderGeneration extends React.Component {
       estimatedPrice: 0,
       routeShouldUpdate: true,
       riderNumber: 0,
-      paxSelected: 0
+      paxSelected: 0,
+      showOrderTakeFailure:false
     };
   }
   componentDidMount() {
@@ -99,6 +100,31 @@ class OrderGeneration extends React.Component {
         time: Date.now()
       });
       console.log(order_accepted);
+      this.props.dispatch({
+        type: "navigator/save",
+        payload: {
+          orderGenerationTriggered: false,
+          driverFoundTriggered: true
+        }
+      });
+      this.props.dispatch({
+        type: "driverStatus/save",
+        payload: {
+          clientIn:true
+        }
+      });
+    }
+    else {
+      this.setState({showOrderTakeFailure:true})
+      setTimeout(()=>{
+        this.props.dispatch({
+          type: "navigator/save",
+          payload: {
+            orderGenerationTriggered: true
+          }
+        })
+        this.props.dispatch(routerRedux.push({ pathname: "/" }));
+      },2000)
     }
   }
   onStartChange = value => {
@@ -218,13 +244,7 @@ class OrderGeneration extends React.Component {
                   className={styles.bottom__rider__submit}
                   onClick={()=>{
                     this.acceptOrderFunction()
-                    this.props.dispatch({
-                      type: "navigator/save",
-                      payload: {
-                        orderGenerationTriggered: false,
-                        driverFoundTriggered: true
-                      }
-                    });
+                    
                   }}
                 >
                   抢单

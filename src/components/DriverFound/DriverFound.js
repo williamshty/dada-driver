@@ -126,6 +126,14 @@ class DriverFound extends React.Component {
               className={styles.confirm__button}
               onClick={() => {
                 this.collectClientFunction();
+                if(this.props.driverStatus.inShareOrder){
+                  this.props.dispatch({
+                    type: "driverStatus/save",
+                    payload: {
+                      currentOrder:this.props.driverStatus.firstOrder
+                    }
+                  });
+                }
                 this.props.dispatch({
                   type: "navigator/save",
                   payload: {
