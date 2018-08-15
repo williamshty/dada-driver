@@ -14,6 +14,7 @@ import { acceptOrder, verifyOrder } from "../../utils/webServices";
 import OrderPriceForm from "../Forms/OrderPriceForm";
 import SearchItem from "../Forms/SearchItem";
 import SearchListItem from "../SearchListItem/SearchListItem";
+import Toast from "../../components/Toast/Toast";
 // import pile from 'pile-ui'
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -47,7 +48,14 @@ class OrderGeneration extends React.Component {
       }
     });
   }
-  componentDidUpdate() {}
+  componentDidUpdate() {
+    if(this.state.showOrderTakeFailure){
+      setTimeout(()=>{
+        this.setState({showOrderTakeFailure:false})
+        this.props.dispatch(routerRedux.push({ pathname: "/" }));
+      },2000)
+    }
+  }
   async loadLocationByCoordinate(coordinate) {
     const result = await searchLocationByCoordinate(coordinate);
     this.props.dispatch({
@@ -116,15 +124,6 @@ class OrderGeneration extends React.Component {
     }
     else {
       this.setState({showOrderTakeFailure:true})
-      setTimeout(()=>{
-        this.props.dispatch({
-          type: "navigator/save",
-          payload: {
-            orderGenerationTriggered: true
-          }
-        })
-        this.props.dispatch(routerRedux.push({ pathname: "/" }));
-      },2000)
     }
   }
   onStartChange = value => {
@@ -171,6 +170,11 @@ class OrderGeneration extends React.Component {
   render() {
     return (
       <div>
+        {(() => {
+          if (this.state.showOrderTakeFailure) {
+            return <Toast text="订单已失效" />;
+          }
+        })()}
         <div className={styles.top__container}>
           <div
             className={styles.back__arrow}
