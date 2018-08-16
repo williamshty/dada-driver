@@ -41,7 +41,7 @@ class IndexPage extends React.Component {
     // setInterval(()=>{
     //   console.log(this.props.mapData.currentLocation)
     //   updateLocation(this.props.mapData.currentLocation)
-    // },3000)
+    // },5000)
   }
   componentDidMount(){
     console.log(this.props.driverStatus.currentOrder)

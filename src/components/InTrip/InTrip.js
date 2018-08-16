@@ -15,6 +15,13 @@ class InTrip extends React.Component {
       _id: this.props.driverStatus.currentOrder.id,
       time: Date.now()
     })
+    let currentOrderList = this.props.driverStatus.orderList
+    for(const[index,order] of currentOrderList.entries()){
+      if(order.id===this.props.driverStatus.currentOrder.id){
+        currentOrderList = currentOrderList.splice(index, 1);
+        return
+      }
+    }
     console.log(trip_end)
     this.props.dispatch({
       type:'driverStatus/save',
